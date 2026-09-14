@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Invoice Agent</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .match {
+            padding: 15px;
+            border-radius: 8px;
+            background: #e8f5e9;
+        }
+
+        .exception {
+            padding: 15px;
+            border-radius: 8px;
+            background: #fff3e0;
+        }
+
+        .reset-button {
+            margin-left: 10px;
+            border: 1px solid #999;
+            background: white;
+}
+
+        button {
+            padding: 10px 18px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Invoice Agent</h1>
+
+<p>
+    Upload an invoice to extract, match and route it.
+</p>
+
+<div class="card">
+
+    <h3>Invoice</h3>
+
+    <input
+        type="file"
+        id="invoiceFile"
+        accept=".pdf,.png,.jpg,.jpeg,.webp"
+    >
+
+    <h3>Purchase Order</h3>
+
+    <input
+        type="file"
+        id="poFile"
+        accept=".pdf,.png,.jpg,.jpeg,.webp"
+    >
+
+    <br><br>
+
+    <button onclick="processDocuments()">
+        Process Documents
+    </button>
+
+    <button
+    id="resetTestButton"
+    type="button"
+    class="reset-button"
+    onclick="resetTestData()"
+>
+    Reset Test Data
+</button>
+
+</div>
+
+<div id="result"></div>
+
+<script>
+
+let currentInvoiceId = null;
+
+async function processInvoice() {
+
+    const file =
+        document.getElementById("invoiceFile").files[0];
+
+    if (!file) {
+        alert("Please select an invoice.");
+        return;
+    }
+
+    const formData = new FormData();
+
+    formData.append("file", file);
+
+    document.getElementById("result").innerHTML =
+        "<p>Processing invoice...</p>";
+
+    const response = await fetch(
+        "http://127.0.0.1:8000/process-invoice",
+        {
+            method: "POST",
+            body: formData
+        }
+    );
+
+    const data = await response.json();
+
+    displayResult(data);
+}
+
+
+async function processDocuments() {
+
+    const invoiceFile =
+        document.getElementById(
+            "invoiceFile"
+        ).files[0];
+
+    const poFile =
+        document.getElementById(
+            "poFile"
+        ).files[0];
+
+
+    if (!invoiceFile) {
+        alert("Please select an invoice.");
+        return;
+    }
+
+
+    if (!poFile) {
+        alert("Please select a purchase order.");
+        return;
+    }
+
+
+    const formData = new FormData();
+
+    formData.append(
+        "invoice_file",
+        invoiceFile
+    );
+
+    formData.append(
+        "po_file",
+        poFile
+    );
+
+
+    document.getElementById(
+        "result"
+    ).innerHTML =
+        "<p>Processing invoice and purchase order...</p>";
+
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/process-documents",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+
+        if (!response.ok) {
+
+            const text =
+                await response.text();
+
+            throw new Error(text);
+        }
+
+
+        const data =
+            await response.json();
+
+
+        displayResult(data);
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        document.getElementById(
+            "result"
+        ).innerHTML = `
+            <div class="card exception">
+                <h2>Processing Error</h2>
+                <p>${error.message}</p>
+            </div>
+        `;
+    }
+}
+
+
+
+
+function displayResult(data) {
+
+    currentInvoiceId = data.invoice_id;
+
+    const invoice = data.invoice;
+    const po = data.purchase_order;
+    const matching = data.matching;
+    const invoiceConfidence =
+        data.invoice_confidence;
+
+    const poConfidence =
+        data.po_confidence;
+
+    let html = `
+        <div class="card">
+
+            <h2>Invoice ${invoice.invoice_number}</h2>
+
+            <p>
+                <strong>Vendor:</strong>
+                ${invoice.vendor}
+            </p>
+
+            <p>
+                <strong>PO:</strong>
+                ${invoice.po_number}
+            </p>
+
+            <p>
+                <strong>Total:</strong>
+                ${invoice.currency}
+                ${invoice.total}
+            </p>
+
+        </div>
+    `;
+
+    if (matching.decision === "MATCH") {
+
+        html += `
+            <div class="card match">
+
+                <h2>✓ Invoice matched</h2>
+
+                <p>
+                    Invoice matches the purchase order.
+                </p>
+
+                <button onclick="approveInvoice()">
+                    Approve
+                </button>
+
+            </div>
+        `;
+
+    } else {
+
+        html += `
+            <div class="card exception">
+
+                <h2>⚠ Exception detected</h2>
+
+                <h3>Issues</h3>
+
+                <ul>
+                    ${matching.exceptions
+                        .map(x => `
+                             <li>
+                                <strong>${x.type}</strong><br>
+                                ${x.message}
+                             </li>
+   		        `)
+                        .join("")}
+                </ul>
+
+                <h3>Route</h3>
+
+            <p>
+                ${data.route ? data.route.join(", ") : "Not assigned"}
+            </p>
+
+            <h3>AI Analysis</h3>
+
+            <div>
+                <p>
+                    <strong>Summary:</strong>
+                    ${data.exception_analysis?.summary ?? "No analysis available"}
+                </p>
+
+                <p>
+                    <strong>Severity:</strong>
+                    ${data.exception_analysis?.severity ?? "N/A"}
+                </p>
+
+                <p>
+                    <strong>Recommended action:</strong>
+                    ${data.exception_analysis?.recommended_action ?? "N/A"}
+                </p>
+            </div>
+
+            <button onclick="approveInvoice()">
+                Approve
+            </button>
+
+            <button onclick="rejectInvoice()">
+                Reject
+            </button>
+
+        </div>
+    `;
+    }
+
+    document.getElementById("result").innerHTML = html;
+}
+
+
+async function approveInvoice() {
+
+    const response = await fetch(
+        `http://127.0.0.1:8000/review/${currentInvoiceId}`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                decision: "APPROVE",
+                reviewer: "demo-user",
+                notes: ""
+            })
+        }
+    );
+
+    const data = await response.json();
+
+    alert("Decision saved.");
+}
+
+
+async function rejectInvoice() {
+
+    const response = await fetch(
+        `http://127.0.0.1:8000/review/${currentInvoiceId}`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                decision: "REJECT",
+                reviewer: "demo-user",
+                notes: ""
+            })
+        }
+    );
+
+    const data = await response.json();
+
+    alert("Decision saved.");
+}
+
+async function resetTestData() {
+
+    const confirmed = confirm(
+        "Clear all prototype test data?"
+    );
+
+    if (!confirmed) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/dev/reset-test-data",
+            {
+                method: "POST"
+            }
+        );
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            alert(
+                data.message ||
+                "Reset is not available."
+            );
+
+            return;
+        }
+
+
+        // Clear selected invoice
+        const invoiceInput =
+            document.getElementById(
+                "invoiceFile"
+            );
+
+        if (invoiceInput) {
+            invoiceInput.value = "";
+        }
+
+
+        // Clear selected PO
+        const poInput =
+            document.getElementById(
+                "poFile"
+            );
+
+        if (poInput) {
+            poInput.value = "";
+        }
+
+
+        // Forget current invoice ID
+        currentInvoiceId = null;
+
+
+        // Clear previous results
+        document.getElementById(
+            "result"
+        ).innerHTML = `
+            <div class="card">
+                <h3>Test data cleared</h3>
+
+                <p>
+                    You can now upload the next
+                    invoice and purchase order.
+                </p>
+            </div>
+        `;
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to reset test data."
+        );
+    }
+}
+
+async function configureUI() {
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/config"
+        );
+
+        const config = await response.json();
+
+        const resetButton =
+            document.getElementById(
+                "resetTestButton"
+            );
+
+        if (resetButton) {
+
+            if (config.development_mode) {
+                resetButton.style.display = "inline-block";
+            } else {
+                resetButton.style.display = "none";
+            }
+        }
+
+    } catch (error) {
+        console.error(
+            "Unable to load UI configuration.",
+            error
+        );
+    }
+}
+
+window.addEventListener(
+    "DOMContentLoaded",
+    configureUI
+);
+
+</script>
+
+</body>
+</html>

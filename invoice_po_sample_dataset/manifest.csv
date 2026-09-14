@@ -1,0 +1,6 @@
+case_id,expected_result,invoice_pdf,po_pdf
+case_01_match,MATCH,case_01_match/invoice.pdf,case_01_match/purchase_order.pdf
+case_02_price_variance,EXCEPTION: PRICE_VARIANCE,case_02_price_variance/invoice.pdf,case_02_price_variance/purchase_order.pdf
+case_03_quantity_variance,EXCEPTION: QUANTITY_VARIANCE,case_03_quantity_variance/invoice.pdf,case_03_quantity_variance/purchase_order.pdf
+case_04_currency_mismatch,EXCEPTION: CURRENCY_MISMATCH,case_04_currency_mismatch/invoice.pdf,case_04_currency_mismatch/purchase_order.pdf
+case_05_vendor_mismatch,EXCEPTION: VENDOR_MISMATCH,case_05_vendor_mismatch/invoice.pdf,case_05_vendor_mismatch/purchase_order.pdf
