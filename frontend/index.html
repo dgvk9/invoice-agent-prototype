@@ -1,515 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <title>Invoice Agent</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .match {
-            padding: 15px;
-            border-radius: 8px;
-            background: #e8f5e9;
-        }
-
-        .exception {
-            padding: 15px;
-            border-radius: 8px;
-            background: #fff3e0;
-        }
-
-        .reset-button {
-            margin-left: 10px;
-            border: 1px solid #999;
-            background: white;
-}
-
-        button {
-            padding: 10px 18px;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        td, th {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Agent</title>
+  <style>
+    :root{--bg:#f5f7fa;--surface:#fff;--text:#172033;--muted:#667085;--border:#e4e7ec;--accent:#3157d5;--accent2:#2747b2;--success:#137a4a;--success-bg:#ecfdf3;--warn:#a15c00;--warn-bg:#fff7e6;--danger:#b42318;--danger-bg:#fff1f0;--info:#175cd3;--info-bg:#eff8ff;--shadow:0 8px 24px rgba(16,24,40,.07)}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+    button,input,textarea{font:inherit}.shell{max-width:1180px;margin:0 auto;padding:28px 22px 60px}.topbar{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:26px}.brand h1{margin:0;font-size:28px;letter-spacing:-.5px}.brand p{margin:5px 0 0;color:var(--muted)}
+    .env-badge{display:none;padding:7px 10px;border-radius:999px;background:#fff4e5;color:#9a5b00;font-size:12px;font-weight:800;letter-spacing:.06em;border:1px solid #ffd89b}
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:24px;margin-top:18px}.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}.panel h2,.panel h3{margin-top:0}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--accent);margin-bottom:6px}.muted{color:var(--muted)}
+    .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.upload-card{border:1.5px dashed #c8d0df;border-radius:14px;padding:22px;background:#fbfcfe;transition:.2s}.upload-card:hover{border-color:#8ca1e9;background:#f8faff}.upload-card label{display:block;font-weight:750;margin-bottom:5px}.upload-card small{display:block;color:var(--muted);margin-bottom:14px}.upload-card input{width:100%;padding:10px;border:1px solid var(--border);border-radius:9px;background:#fff}
+    .actions{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-top:18px}.btn{border:0;border-radius:9px;padding:11px 17px;font-weight:750;cursor:pointer}.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent2)}.btn-secondary{background:#fff;color:var(--text);border:1px solid var(--border)}.btn-danger{background:#fff;color:var(--danger);border:1px solid #f2b8b5}.btn:disabled{opacity:.55;cursor:not-allowed}
+    .processing{display:none}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.step{padding:12px;border-radius:10px;background:#f2f4f7;color:var(--muted);font-size:13px;font-weight:700;text-align:center}.step.active{background:var(--info-bg);color:var(--info)}.step.done{background:var(--success-bg);color:var(--success)}
+    .status-banner{border-radius:14px;padding:20px 22px;margin-bottom:18px;display:flex;justify-content:space-between;gap:16px;align-items:center}.status-banner.match{background:var(--success-bg);border:1px solid #abefc6}.status-banner.exception{background:var(--warn-bg);border:1px solid #fedf89}.status-title{font-size:21px;font-weight:850}.status-sub{margin-top:5px;color:#475467}.pill{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;background:#fff;border:1px solid rgba(0,0,0,.08)}
+    .compare{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}.compare th,.compare td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left}.compare th{background:#f8fafc;color:#475467;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.compare tr:last-child td{border-bottom:0}.ok{color:var(--success);font-weight:800}.bad{color:var(--danger);font-weight:800}.mono{font-variant-numeric:tabular-nums}
+    .two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}.subcard{border:1px solid var(--border);border-radius:13px;padding:18px;background:#fff}.subcard h3{margin:0 0 13px;font-size:16px}.exception-list{margin:0;padding-left:20px}.exception-list li{margin:9px 0}.ai-card{background:#f8f7ff;border-color:#ded8ff}.ai-label{font-size:12px;font-weight:850;color:#6941c6;text-transform:uppercase;letter-spacing:.06em}.ai-card p{line-height:1.55}.confidence-row{display:grid;grid-template-columns:1fr 54px;gap:10px;align-items:center;margin:10px 0}.confidence-track{grid-column:1/3;height:7px;background:#eef1f5;border-radius:99px;overflow:hidden}.confidence-fill{height:100%;background:#7b8bb5;border-radius:99px}
+    .review textarea{width:100%;min-height:92px;border:1px solid var(--border);border-radius:9px;padding:11px;resize:vertical}.review-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}.review-complete{padding:12px;border-radius:9px;background:var(--success-bg);color:var(--success);font-weight:750;margin-top:12px;display:none}
+    .developer{display:none;margin-top:18px}.developer details{background:#fff;border:1px dashed #d0d5dd;border-radius:12px;padding:14px}.developer summary{cursor:pointer;font-weight:750;color:#475467}.developer .dev-body{padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:14px}.empty{padding:38px 20px;text-align:center;color:var(--muted);border:1px dashed var(--border);border-radius:12px}.error{background:var(--danger-bg);border:1px solid #fecdca;color:#912018;border-radius:12px;padding:16px;white-space:pre-wrap;overflow:auto}
+    @media(max-width:800px){.upload-grid,.two-col{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.topbar{align-items:flex-start}.actions{justify-content:stretch}.actions .btn{flex:1}.compare{font-size:13px}.shell{padding:20px 14px 45px}}
+  </style>
 </head>
-
 <body>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><h1>Invoice Agent</h1><p>AI-assisted accounts payable matching and exception review</p></div>
+    <span id="envBadge" class="env-badge">DEVELOPMENT</span>
+  </header>
 
-<h1>Invoice Agent</h1>
+  <section class="panel">
+    <div class="panel-head"><div><div class="eyebrow">Document intake</div><h2>Process a new invoice</h2><div class="muted">Upload an invoice and its purchase order. PDF, PNG, JPG, JPEG and WebP are supported.</div></div></div>
+    <div class="upload-grid">
+      <div class="upload-card"><label for="invoiceFile">Invoice</label><small>Select the supplier invoice to process</small><input type="file" id="invoiceFile" accept=".pdf,.png,.jpg,.jpeg,.webp"></div>
+      <div class="upload-card"><label for="poFile">Purchase Order</label><small>Select the PO to match against the invoice</small><input type="file" id="poFile" accept=".pdf,.png,.jpg,.jpeg,.webp"></div>
+    </div>
+    <div class="actions"><button id="processButton" class="btn btn-primary" onclick="processDocuments()">Process Documents</button></div>
+  </section>
 
-<p>
-    Upload an invoice to extract, match and route it.
-</p>
+  <section id="processingPanel" class="panel processing">
+    <div class="panel-head"><div><div class="eyebrow">Workflow</div><h2>Processing documents</h2></div></div>
+    <div class="steps"><div id="stepUpload" class="step active">1. Upload</div><div id="stepExtract" class="step">2. Extract</div><div id="stepValidate" class="step">3. Validate & Match</div><div id="stepComplete" class="step">4. Complete</div></div>
+  </section>
 
-<div class="card">
+  <section id="result" class="panel"><div class="empty">Process an invoice and purchase order to see the comparison and review result.</div></section>
 
-    <h3>Invoice</h3>
-
-    <input
-        type="file"
-        id="invoiceFile"
-        accept=".pdf,.png,.jpg,.jpeg,.webp"
-    >
-
-    <h3>Purchase Order</h3>
-
-    <input
-        type="file"
-        id="poFile"
-        accept=".pdf,.png,.jpg,.jpeg,.webp"
-    >
-
-    <br><br>
-
-    <button onclick="processDocuments()">
-        Process Documents
-    </button>
-
-    <button
-    id="resetTestButton"
-    type="button"
-    class="reset-button"
-    onclick="resetTestData()"
->
-    Reset Test Data
-</button>
-
+  <section id="developerTools" class="developer">
+    <details><summary>Developer Tools</summary><div class="dev-body"><span class="muted">Clears prototype records so you can rerun test cases.</span><button id="resetTestButton" type="button" class="btn btn-danger" onclick="resetTestData()">Reset Test Data</button></div></details>
+  </section>
 </div>
 
-<div id="result"></div>
-
 <script>
-
+const API_BASE = "http://127.0.0.1:8000";
 let currentInvoiceId = null;
+let lastResult = null;
 
-async function processInvoice() {
+const esc = value => String(value ?? "—").replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const money = (currency, value) => value === null || value === undefined ? "—" : `${esc(currency || "")} ${Number(value).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`.trim();
+const sameText = (a,b) => String(a ?? '').trim().toLowerCase() === String(b ?? '').trim().toLowerCase();
+const sameNumber = (a,b) => Number.isFinite(Number(a)) && Number.isFinite(Number(b)) && Math.abs(Number(a)-Number(b)) <= 0.01;
 
-    const file =
-        document.getElementById("invoiceFile").files[0];
+function setProcessing(on){
+  document.getElementById('processingPanel').style.display = on ? 'block' : 'none';
+  document.getElementById('processButton').disabled = on;
+  if(on){
+    ['stepUpload','stepExtract','stepValidate','stepComplete'].forEach((id,i)=>{const e=document.getElementById(id);e.className='step'+(i===0?' active':'');});
+    setTimeout(()=>advanceStep('stepUpload','stepExtract'),250);
+    setTimeout(()=>advanceStep('stepExtract','stepValidate'),900);
+  }
+}
+function advanceStep(doneId, activeId){const d=document.getElementById(doneId),a=document.getElementById(activeId);if(d)d.className='step done';if(a)a.className='step active';}
 
-    if (!file) {
-        alert("Please select an invoice.");
-        return;
-    }
-
-    const formData = new FormData();
-
-    formData.append("file", file);
-
-    document.getElementById("result").innerHTML =
-        "<p>Processing invoice...</p>";
-
-    const response = await fetch(
-        "http://127.0.0.1:8000/process-invoice",
-        {
-            method: "POST",
-            body: formData
-        }
-    );
-
-    const data = await response.json();
-
+async function processDocuments(){
+  const invoiceFile=document.getElementById('invoiceFile').files[0];
+  const poFile=document.getElementById('poFile').files[0];
+  if(!invoiceFile){alert('Please select an invoice.');return;}
+  if(!poFile){alert('Please select a purchase order.');return;}
+  const formData=new FormData(); formData.append('invoice_file',invoiceFile); formData.append('po_file',poFile);
+  setProcessing(true);
+  document.getElementById('result').innerHTML='<div class="empty">Extracting documents and running matching controls…</div>';
+  try{
+    const response=await fetch(`${API_BASE}/process-documents`,{method:'POST',body:formData});
+    if(!response.ok) throw new Error(await response.text());
+    const data=await response.json();
+    advanceStep('stepValidate','stepComplete'); setTimeout(()=>{const e=document.getElementById('stepComplete');if(e)e.className='step done';},200);
     displayResult(data);
+  }catch(error){console.error(error);document.getElementById('result').innerHTML=`<div class="error"><strong>Processing error</strong><br><br>${esc(error.message)}</div>`;}
+  finally{document.getElementById('processButton').disabled=false;}
 }
 
-
-async function processDocuments() {
-
-    const invoiceFile =
-        document.getElementById(
-            "invoiceFile"
-        ).files[0];
-
-    const poFile =
-        document.getElementById(
-            "poFile"
-        ).files[0];
-
-
-    if (!invoiceFile) {
-        alert("Please select an invoice.");
-        return;
-    }
-
-
-    if (!poFile) {
-        alert("Please select a purchase order.");
-        return;
-    }
-
-
-    const formData = new FormData();
-
-    formData.append(
-        "invoice_file",
-        invoiceFile
-    );
-
-    formData.append(
-        "po_file",
-        poFile
-    );
-
-
-    document.getElementById(
-        "result"
-    ).innerHTML =
-        "<p>Processing invoice and purchase order...</p>";
-
-
-    try {
-
-        const response = await fetch(
-            "http://127.0.0.1:8000/process-documents",
-            {
-                method: "POST",
-                body: formData
-            }
-        );
-
-
-        if (!response.ok) {
-
-            const text =
-                await response.text();
-
-            throw new Error(text);
-        }
-
-
-        const data =
-            await response.json();
-
-
-        displayResult(data);
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        document.getElementById(
-            "result"
-        ).innerHTML = `
-            <div class="card exception">
-                <h2>Processing Error</h2>
-                <p>${error.message}</p>
-            </div>
-        `;
-    }
+function lineSummary(items){
+  if(!Array.isArray(items)||!items.length)return {qty:null,price:null};
+  if(items.length===1)return {qty:items[0].quantity,price:items[0].unit_price};
+  return {qty:`${items.length} line items`,price:'See line items'};
 }
 
-
-
-
-function displayResult(data) {
-
-    currentInvoiceId = data.invoice_id;
-
-    const invoice = data.invoice;
-    const po = data.purchase_order;
-    const matching = data.matching;
-    const invoiceConfidence =
-        data.invoice_confidence;
-
-    const poConfidence =
-        data.po_confidence;
-
-    let html = `
-        <div class="card">
-
-            <h2>Invoice ${invoice.invoice_number}</h2>
-
-            <p>
-                <strong>Vendor:</strong>
-                ${invoice.vendor}
-            </p>
-
-            <p>
-                <strong>PO:</strong>
-                ${invoice.po_number}
-            </p>
-
-            <p>
-                <strong>Total:</strong>
-                ${invoice.currency}
-                ${invoice.total}
-            </p>
-
-        </div>
-    `;
-
-    if (matching.decision === "MATCH") {
-
-        html += `
-            <div class="card match">
-
-                <h2>✓ Invoice matched</h2>
-
-                <p>
-                    Invoice matches the purchase order.
-                </p>
-
-                <button onclick="approveInvoice()">
-                    Approve
-                </button>
-
-            </div>
-        `;
-
-    } else {
-
-        html += `
-            <div class="card exception">
-
-                <h2>⚠ Exception detected</h2>
-
-                <h3>Issues</h3>
-
-                <ul>
-                    ${matching.exceptions
-                        .map(x => `
-                             <li>
-                                <strong>${x.type}</strong><br>
-                                ${x.message}
-                             </li>
-   		        `)
-                        .join("")}
-                </ul>
-
-                <h3>Route</h3>
-
-            <p>
-                ${data.route ? data.route.join(", ") : "Not assigned"}
-            </p>
-
-            <h3>AI Analysis</h3>
-
-            <div>
-                <p>
-                    <strong>Summary:</strong>
-                    ${data.exception_analysis?.summary ?? "No analysis available"}
-                </p>
-
-                <p>
-                    <strong>Severity:</strong>
-                    ${data.exception_analysis?.severity ?? "N/A"}
-                </p>
-
-                <p>
-                    <strong>Recommended action:</strong>
-                    ${data.exception_analysis?.recommended_action ?? "N/A"}
-                </p>
-            </div>
-
-            <button onclick="approveInvoice()">
-                Approve
-            </button>
-
-            <button onclick="rejectInvoice()">
-                Reject
-            </button>
-
-        </div>
-    `;
-    }
-
-    document.getElementById("result").innerHTML = html;
+function comparisonRow(label, invoiceValue, poValue, matches, formatter=v=>esc(v)){
+  return `<tr><td><strong>${esc(label)}</strong></td><td>${formatter(invoiceValue)}</td><td>${formatter(poValue)}</td><td class="${matches?'ok':'bad'}">${matches?'✓ Match':'⚠ Review'}</td></tr>`;
 }
 
-
-async function approveInvoice() {
-
-    const response = await fetch(
-        `http://127.0.0.1:8000/review/${currentInvoiceId}`,
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                decision: "APPROVE",
-                reviewer: "demo-user",
-                notes: ""
-            })
-        }
-    );
-
-    const data = await response.json();
-
-    alert("Decision saved.");
+function confidenceHtml(title, confidence){
+  if(!confidence||typeof confidence!=='object') return '';
+  const rows=Object.entries(confidence).map(([field,score])=>{const pct=Math.round(Number(score)*100);return `<div class="confidence-row"><span>${esc(field.replaceAll('_',' '))}</span><strong>${Number.isFinite(pct)?pct:'—'}%</strong><div class="confidence-track"><div class="confidence-fill" style="width:${Number.isFinite(pct)?Math.max(0,Math.min(100,pct)):0}%"></div></div></div>`}).join('');
+  return `<div class="subcard"><h3>${esc(title)}</h3>${rows||'<span class="muted">No confidence data available.</span>'}</div>`;
 }
 
+function displayResult(data){
+  currentInvoiceId=data.invoice_id; lastResult=data;
+  const invoice=data.invoice||{}; const po=data.purchase_order||{}; const matching=data.matching||{decision:'EXCEPTION',exceptions:[]};
+  const invLine=lineSummary(invoice.line_items), poLine=lineSummary(po.line_items);
+  const isMatch=matching.decision==='MATCH';
+  const exceptions=Array.isArray(matching.exceptions)?matching.exceptions:[];
+  const route=Array.isArray(data.route)?data.route.join(', '):(data.route||'Not assigned');
+  const analysis=data.exception_analysis||{};
+  let html=`
+    <div class="status-banner ${isMatch?'match':'exception'}">
+      <div><div class="status-title">${isMatch?'✓ Invoice matched':'⚠ Human review required'}</div><div class="status-sub">${isMatch?'Invoice and purchase order match within the configured controls.':`${exceptions.length} exception${exceptions.length===1?'':'s'} detected and routed for review.`}</div></div>
+      <span class="pill">${esc(matching.decision)}</span>
+    </div>
+    <div class="panel-head"><div><div class="eyebrow">Comparison</div><h2>Invoice ${esc(invoice.invoice_number)} vs. PO ${esc(po.po_number)}</h2><div class="muted">Invoice ID: ${esc(data.invoice_id)}</div></div></div>
+    <table class="compare"><thead><tr><th>Field</th><th>Invoice</th><th>Purchase Order</th><th>Status</th></tr></thead><tbody>
+      ${comparisonRow('Vendor',invoice.vendor,po.vendor,sameText(invoice.vendor,po.vendor))}
+      ${comparisonRow('PO Number',invoice.po_number,po.po_number,sameText(invoice.po_number,po.po_number))}
+      ${comparisonRow('Currency',invoice.currency,po.currency,sameText(invoice.currency,po.currency))}
+      ${comparisonRow('Quantity',invLine.qty,poLine.qty,sameNumber(invLine.qty,poLine.qty))}
+      ${comparisonRow('Unit Price',invLine.price,poLine.price,sameNumber(invLine.price,poLine.price),v=>typeof v==='number'?money(invoice.currency,v):esc(v))}
+      ${comparisonRow('Total',invoice.total,po.total,sameNumber(invoice.total,po.total),v=>money(invoice.currency,v))}
+    </tbody></table>`;
 
-async function rejectInvoice() {
+  if(!isMatch){
+    html+=`<div class="two-col"><div class="subcard"><h3>Detected exceptions</h3><ul class="exception-list">${exceptions.map(x=>`<li><strong>${esc(x.type)}</strong><br><span class="muted">${esc(x.message)}</span></li>`).join('')||'<li>No exception details returned.</li>'}</ul><p><strong>Routed to:</strong> ${esc(route)}</p></div>
+    <div class="subcard ai-card"><div class="ai-label">✦ AI exception analysis</div><h3>${esc(analysis.summary||'No analysis available')}</h3><p><strong>Severity:</strong> ${esc(analysis.severity||'N/A')}</p><p><strong>Suggested action:</strong><br>${esc(analysis.recommended_action||'N/A')}</p><p class="muted"><small>AI-generated explanation. Matching controls remain authoritative.</small></p></div></div>`;
+  }
 
-    const response = await fetch(
-        `http://127.0.0.1:8000/review/${currentInvoiceId}`,
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                decision: "REJECT",
-                reviewer: "demo-user",
-                notes: ""
-            })
-        }
-    );
-
-    const data = await response.json();
-
-    alert("Decision saved.");
+  html+=`<div class="two-col">${confidenceHtml('Invoice extraction confidence',data.invoice_confidence)}${confidenceHtml('PO extraction confidence',data.po_confidence)}</div>`;
+  html+=`<div class="subcard review" style="margin-top:18px"><div class="eyebrow">Human review</div><h3>${isMatch?'Confirm processing decision':'Resolve exception'}</h3><label for="reviewNotes"><strong>Reviewer notes</strong></label><textarea id="reviewNotes" placeholder="Add context for the audit trail (optional)"></textarea><div class="review-actions"><button class="btn btn-secondary" onclick="submitReview('REJECT')">Reject</button><button class="btn btn-primary" onclick="submitReview('APPROVE')">${isMatch?'Approve':'Approve Exception'}</button></div><div id="reviewComplete" class="review-complete"></div></div>`;
+  document.getElementById('result').innerHTML=html;
 }
 
-async function resetTestData() {
+async function submitReview(decision){
+  if(!currentInvoiceId){alert('No invoice is currently selected.');return;}
+  const notes=document.getElementById('reviewNotes')?.value||'';
+  try{
+    const response=await fetch(`${API_BASE}/review/${currentInvoiceId}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({decision,reviewer:'demo-user',notes})});
+    if(!response.ok) throw new Error(await response.text());
+    await response.json();
+    const box=document.getElementById('reviewComplete'); if(box){box.style.display='block';box.textContent=`✓ ${decision==='APPROVE'?'Approval':'Rejection'} saved for invoice ${currentInvoiceId}.`;}
+  }catch(error){console.error(error);alert(`Unable to save decision: ${error.message}`);}
+}
+async function approveInvoice(){return submitReview('APPROVE');}
+async function rejectInvoice(){return submitReview('REJECT');}
 
-    const confirmed = confirm(
-        "Clear all prototype test data?"
-    );
-
-    if (!confirmed) {
-        return;
-    }
-
-    try {
-
-        const response = await fetch(
-            "http://127.0.0.1:8000/dev/reset-test-data",
-            {
-                method: "POST"
-            }
-        );
-
-        const data =
-            await response.json();
-
-
-        if (!data.success) {
-
-            alert(
-                data.message ||
-                "Reset is not available."
-            );
-
-            return;
-        }
-
-
-        // Clear selected invoice
-        const invoiceInput =
-            document.getElementById(
-                "invoiceFile"
-            );
-
-        if (invoiceInput) {
-            invoiceInput.value = "";
-        }
-
-
-        // Clear selected PO
-        const poInput =
-            document.getElementById(
-                "poFile"
-            );
-
-        if (poInput) {
-            poInput.value = "";
-        }
-
-
-        // Forget current invoice ID
-        currentInvoiceId = null;
-
-
-        // Clear previous results
-        document.getElementById(
-            "result"
-        ).innerHTML = `
-            <div class="card">
-                <h3>Test data cleared</h3>
-
-                <p>
-                    You can now upload the next
-                    invoice and purchase order.
-                </p>
-            </div>
-        `;
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(
-            "Unable to reset test data."
-        );
-    }
+async function resetTestData(){
+  if(!confirm('Clear all prototype test data?'))return;
+  try{
+    const response=await fetch(`${API_BASE}/dev/reset-test-data`,{method:'POST'}); const data=await response.json();
+    if(!response.ok||!data.success){alert(data.message||'Reset is not available.');return;}
+    document.getElementById('invoiceFile').value=''; document.getElementById('poFile').value=''; currentInvoiceId=null; lastResult=null;
+    document.getElementById('processingPanel').style.display='none';
+    document.getElementById('result').innerHTML='<div class="empty">Test data cleared. Upload the next invoice and purchase order when ready.</div>';
+  }catch(error){console.error(error);alert('Unable to reset test data.');}
 }
 
-async function configureUI() {
-
-    try {
-
-        const response = await fetch(
-            "http://127.0.0.1:8000/config"
-        );
-
-        const config = await response.json();
-
-        const resetButton =
-            document.getElementById(
-                "resetTestButton"
-            );
-
-        if (resetButton) {
-
-            if (config.development_mode) {
-                resetButton.style.display = "inline-block";
-            } else {
-                resetButton.style.display = "none";
-            }
-        }
-
-    } catch (error) {
-        console.error(
-            "Unable to load UI configuration.",
-            error
-        );
-    }
+async function configureUI(){
+  try{
+    const response=await fetch(`${API_BASE}/config`); if(!response.ok)return;
+    const config=await response.json(); const dev=Boolean(config.development_mode);
+    document.getElementById('developerTools').style.display=dev?'block':'none';
+    document.getElementById('envBadge').style.display=dev?'inline-flex':'none';
+  }catch(error){console.error('Unable to load UI configuration.',error);}
 }
-
-window.addEventListener(
-    "DOMContentLoaded",
-    configureUI
-);
-
+window.addEventListener('DOMContentLoaded',configureUI);
 </script>
-
 </body>
 </html>

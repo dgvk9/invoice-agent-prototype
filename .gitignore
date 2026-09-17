@@ -30,3 +30,6 @@ uploads/
 
 # Logs
 *.log
+
+# local frontend backup
+index-old.html
