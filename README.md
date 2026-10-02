@@ -22,31 +22,38 @@ Invoice Extraction       PO Extraction
        +-----------+-------------+
                    |
                    v
-            Normalized Data
-                   |
-                   v
-      Duplicate + Confidence Checks
-                   |
-                   v
-        Deterministic Matching
+          Pydantic Schema Validation
                    |
           +--------+--------+
           |                 |
+       Invalid            Valid
+          |                 |
           v                 v
-        MATCH           EXCEPTION
+   AP Human Review   Financial Sanity Validation
                             |
                             v
-                    Exception Routing
+                 Duplicate + Confidence Checks
                             |
                             v
-                    AI Explanation
+                  Deterministic Matching
                             |
-                            v
-                     Human Review
-                    Approve / Reject
-                            |
-                            v
-                        Audit Log
+                      +-----+-----+
+                      |           |
+                      v           v
+                    MATCH     EXCEPTION
+                                  |
+                                  v
+                         Exception Routing
+                                  |
+                                  v
+                          AI Explanation
+                                  |
+                                  v
+                           Human Review
+                          Approve / Reject
+                                  |
+                                  v
+                              Audit Log
 ```
 
 ## Key features
@@ -54,6 +61,8 @@ Invoice Extraction       PO Extraction
 -   Invoice extraction from PDF and image documents
 -   Purchase-order extraction from PDF and image documents
 -   Structured JSON normalization
+-   Pydantic schema validation with controlled extraction-validation failures
+-   Deterministic financial sanity checks for invoice and PO arithmetic
 -   Field-level extraction confidence for important fields
 -   Duplicate invoice detection
 -   Deterministic invoice-to-PO matching
@@ -107,6 +116,12 @@ The AI explanation is **not** the authoritative match decision. The
 matching engine remains the source of truth for detected financial
 discrepancies.
 
+## Schema and financial validation
+
+Before matching, extracted AI output is validated against Pydantic models. Invalid JSON or schema violations are converted into a controlled `EXTRACTION_VALIDATION_ERROR` and routed to Accounts Payable rather than allowing malformed data to continue through matching.
+
+For schema-valid documents, deterministic financial checks validate line arithmetic (`quantity × unit_price = amount`), line totals against subtotal, and `subtotal + tax = total` for both invoices and purchase orders. These checks run before invoice-to-PO matching so internally inconsistent documents are surfaced as exceptions.
+
 ## Deterministic controls
 
 The Python matching layer can identify exceptions such as:
@@ -123,6 +138,15 @@ The Python matching layer can identify exceptions such as:
   `LINE_ITEM_COUNT_MISMATCH`   Accounts Payable
   `DUPLICATE_INVOICE`          Accounts Payable
   `LOW_CONFIDENCE`             Accounts Payable
+  `EXTRACTION_VALIDATION_ERROR` Accounts Payable
+  `INVOICE_CALCULATION_ERROR`   Accounts Payable
+  `PO_CALCULATION_ERROR`        Accounts Payable
+  `LINE_CALCULATION_ERROR`      Accounts Payable
+  `LINE_SUM_MISMATCH`           Accounts Payable
+  `TAX_VARIANCE`                Accounts Payable
+  `LINE_AMOUNT_VARIANCE`        Accounts Payable
+  `UNMATCHED_INVOICE_LINE`      Accounts Payable
+  `UNMATCHED_PO_LINE`           Accounts Payable
 
 Routing rules are prototype business rules and can be changed for a real
 pilot.
@@ -154,9 +178,17 @@ invoice-agent/
 │   ├── routing.py
 │   ├── agents.py
 │   ├── storage.py
-│   └── database.py
+│   ├── database.py
+│   ├── models.py
+│   └── validation.py
 ├── data/
-│   └── synthetic test data / prototype PO data
+├── scripts/
+│   └── generate_test_dataset.py
+├── test_dataset/
+│   ├── invoices/
+│   ├── purchase_orders/
+│   ├── ground_truth.json
+│   └── ground_truth.csv
 ├── frontend/
 │   └── index.html
 ├── .env.example
@@ -260,19 +292,7 @@ http://127.0.0.1:5500
 
 ## API workflow
 
-The prototype has evolved through two processing paths.
-
-### `POST /process-invoice`
-
-Original workflow:
-
-1.  upload an invoice
-2.  extract invoice data
-3.  look up the PO from the prototype PO data source
-4.  run duplicate/confidence checks
-5.  perform matching
-6.  route exceptions
-7.  return the result
+The primary processing path accepts both the invoice and purchase order as uploaded documents.
 
 ### `POST /process-documents`
 
@@ -280,12 +300,15 @@ Document-to-document workflow:
 
 1.  upload an invoice PDF/image
 2.  upload a PO PDF/image
-3.  extract both documents
-4.  normalize both records
-5.  run duplicate/confidence checks
-6.  compare invoice against PO
-7.  classify and route exceptions
-8.  generate an exception explanation when needed
+3.  extract both documents with AI
+4.  validate extraction output against Pydantic schemas
+5.  stop and route invalid extraction output for Accounts Payable review
+6.  run deterministic financial sanity checks on both documents
+7.  run duplicate and extraction-confidence checks
+8.  compare invoice against PO with deterministic matching rules
+9.  classify and route exceptions
+10. generate a reviewer-facing AI explanation when needed
+11. persist the processing result and audit events
 
 ### `POST /review/{invoice_id}`
 
@@ -410,15 +433,12 @@ be included in the audit trail.
 The prototype can record workflow events such as:
 
 ``` text
-INVOICE_RECEIVED
-INVOICE_EXTRACTED
-DUPLICATE_CHECK
-CONFIDENCE_CHECK
-PO_LOOKUP
+DOCUMENTS_RECEIVED
+DOCUMENTS_EXTRACTED
+EXTRACTION_VALIDATION_FAILED
+FINANCIAL_VALIDATION_COMPLETED
 MATCH_COMPLETED
 ROUTED_FOR_REVIEW
-EXCEPTION_ANALYZED
-INVOICE_SAVED
 HUMAN_REVIEW_COMPLETED
 ```
 
@@ -505,6 +525,16 @@ Git history, screenshots, or sample configuration files.
 
 ## Test data
 
+The repository includes a controlled synthetic benchmark with **50 invoice/PO cases (100 documents)** covering clean matches and exception scenarios. Documents use fictional Indian IT/software procurement data and a mix of PDF, PNG, JPG, scanned-image, and multi-page inputs. Ground truth is stored in `test_dataset/ground_truth.json` and `test_dataset/ground_truth.csv`.
+
+Covered scenarios include clean matches, price and quantity variances, GST/tax discrepancies, calculation errors, missing/additional lines, wrong PO numbers, vendor mismatches, duplicates, currency mismatch, poor-quality scans, multi-page invoices, and cases with multiple simultaneous problems.
+
+Generate or regenerate the dataset with:
+
+``` bash
+python scripts/generate_test_dataset.py
+```
+
 Use only synthetic/non-sensitive invoice and PO documents when
 publishing sample files in the repository.
 
@@ -550,7 +580,6 @@ A production implementation would typically add:
 -   configurable matching tolerances
 -   receipt data and three-way matching
 -   tax, freight, credit memo, and partial-invoice handling
--   schema-enforced extraction
 -   calibrated extraction-quality metrics
 -   model/evaluation monitoring
 -   immutable audit controls
@@ -588,7 +617,9 @@ AI
   -> explains exceptions
 
 Deterministic code
-  -> compares financial values
+  -> validates extraction schemas
+  -> checks document arithmetic
+  -> compares financial values and line items
   -> detects known exceptions
   -> applies routing policy
 
