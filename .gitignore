@@ -33,3 +33,7 @@ uploads/
 
 # local frontend backup
 index-old.html
+
+
+# local test files
+test_documents/

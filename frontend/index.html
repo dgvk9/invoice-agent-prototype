@@ -16,7 +16,8 @@
     .status-banner{border-radius:14px;padding:20px 22px;margin-bottom:18px;display:flex;justify-content:space-between;gap:16px;align-items:center}.status-banner.match{background:var(--success-bg);border:1px solid #abefc6}.status-banner.exception{background:var(--warn-bg);border:1px solid #fedf89}.status-title{font-size:21px;font-weight:850}.status-sub{margin-top:5px;color:#475467}.pill{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;background:#fff;border:1px solid rgba(0,0,0,.08)}
     .compare{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}.compare th,.compare td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left}.compare th{background:#f8fafc;color:#475467;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.compare tr:last-child td{border-bottom:0}.ok{color:var(--success);font-weight:800}.bad{color:var(--danger);font-weight:800}.mono{font-variant-numeric:tabular-nums}
     .two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}.subcard{border:1px solid var(--border);border-radius:13px;padding:18px;background:#fff}.subcard h3{margin:0 0 13px;font-size:16px}.exception-list{margin:0;padding-left:20px}.exception-list li{margin:9px 0}.ai-card{background:#f8f7ff;border-color:#ded8ff}.ai-label{font-size:12px;font-weight:850;color:#6941c6;text-transform:uppercase;letter-spacing:.06em}.ai-card p{line-height:1.55}.confidence-row{display:grid;grid-template-columns:1fr 54px;gap:10px;align-items:center;margin:10px 0}.confidence-track{grid-column:1/3;height:7px;background:#eef1f5;border-radius:99px;overflow:hidden}.confidence-fill{height:100%;background:#7b8bb5;border-radius:99px}
-    .review textarea{width:100%;min-height:92px;border:1px solid var(--border);border-radius:9px;padding:11px;resize:vertical}.review-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}.review-complete{padding:12px;border-radius:9px;background:var(--success-bg);color:var(--success);font-weight:750;margin-top:12px;display:none}
+    .section-block{margin-top:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:10px}.section-head h3{margin:0}.table-wrap{overflow-x:auto;border-radius:12px}.line-status{white-space:nowrap}.line-detail{font-size:12px;color:var(--muted);margin-top:3px}.unmatched-row{background:#fffaf0}\n  .review label{display:block;margin-bottom:8px;}.review textarea{display:block;width:100%;
+    min-height:110px;border:1px solid var(--border);border-radius:9px;padding:12px;resize:vertical;}.review-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}.review-complete{padding:12px;border-radius:9px;background:var(--success-bg);color:var(--success);font-weight:750;margin-top:12px;display:none}
     .developer{display:none;margin-top:18px}.developer details{background:#fff;border:1px dashed #d0d5dd;border-radius:12px;padding:14px}.developer summary{cursor:pointer;font-weight:750;color:#475467}.developer .dev-body{padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:14px}.empty{padding:38px 20px;text-align:center;color:var(--muted);border:1px dashed var(--border);border-radius:12px}.error{background:var(--danger-bg);border:1px solid #fecdca;color:#912018;border-radius:12px;padding:16px;white-space:pre-wrap;overflow:auto}
     @media(max-width:800px){.upload-grid,.two-col{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.topbar{align-items:flex-start}.actions{justify-content:stretch}.actions .btn{flex:1}.compare{font-size:13px}.shell{padding:20px 14px 45px}}
   </style>
@@ -59,6 +60,49 @@ const money = (currency, value) => value === null || value === undefined ? "—"
 const sameText = (a,b) => String(a ?? '').trim().toLowerCase() === String(b ?? '').trim().toLowerCase();
 const sameNumber = (a,b) => Number.isFinite(Number(a)) && Number.isFinite(Number(b)) && Math.abs(Number(a)-Number(b)) <= 0.01;
 
+function formatReason(reason){
+  const labels = {
+    EXTRACTION_VALIDATION_FAILURE: 'Extraction Validation Failed',
+    FINANCIAL_VALIDATION_FAILURE: 'Financial Validation Failed',
+    MATCHING_FAILURE: 'Invoice / PO Matching Failed',
+    LOW_EXTRACTION_CONFIDENCE: 'Extraction Confidence Review',
+    DUPLICATE_INVOICE: 'Duplicate Invoice Detected',
+    PURCHASE_ORDER_NOT_FOUND: 'Purchase Order Not Found'
+  };
+
+  return labels[reason] || String(reason || 'Exception Review')
+    .replaceAll('_', ' ')
+    .toLowerCase()
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function formatExceptionType(type){
+  const labels = {
+    EXTRACTION_VALIDATION_ERROR: 'Extraction Validation Error',
+    INVOICE_CALCULATION_ERROR: 'Invoice Calculation Error',
+    PO_CALCULATION_ERROR: 'PO Calculation Error',
+    LINE_CALCULATION_ERROR: 'Line Calculation Error',
+    LINE_SUM_MISMATCH: 'Line Total Mismatch',
+    PRICE_VARIANCE: 'Price Variance',
+    QUANTITY_VARIANCE: 'Quantity Variance',
+    TAX_VARIANCE: 'Tax Variance',
+    TOTAL_MISMATCH: 'Total Mismatch',
+    VENDOR_MISMATCH: 'Vendor Mismatch',
+    CURRENCY_MISMATCH: 'Currency Mismatch',
+    PO_NUMBER_MISMATCH: 'PO Number Mismatch',
+    UNMATCHED_INVOICE_LINE: 'Unmatched Invoice Line',
+    UNMATCHED_PO_LINE: 'Unmatched PO Line',
+    DUPLICATE_INVOICE: 'Duplicate Invoice',
+    LOW_CONFIDENCE: 'Low Extraction Confidence',
+    MISSING_PO: 'Missing Purchase Order'
+  };
+
+  return labels[type] || String(type || 'Exception')
+    .replaceAll('_', ' ')
+    .toLowerCase()
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
+
 function setProcessing(on){
   document.getElementById('processingPanel').style.display = on ? 'block' : 'none';
   document.getElementById('processButton').disabled = on;
@@ -88,14 +132,23 @@ async function processDocuments(){
   finally{document.getElementById('processButton').disabled=false;}
 }
 
-function lineSummary(items){
-  if(!Array.isArray(items)||!items.length)return {qty:null,price:null};
-  if(items.length===1)return {qty:items[0].quantity,price:items[0].unit_price};
-  return {qty:`${items.length} line items`,price:'See line items'};
+function comparisonRow(label, invoiceValue, poValue, matches, formatter=v=>esc(v), comparable=true){
+  const status=!comparable?'<span class="muted">Not compared</span>':`<span class="${matches?'ok':'bad'}">${matches?'✓ Match':'⚠ Review'}</span>`;
+  return `<tr><td><strong>${esc(label)}</strong></td><td>${formatter(invoiceValue)}</td><td>${formatter(poValue)}</td><td>${status}</td></tr>`;
 }
-
-function comparisonRow(label, invoiceValue, poValue, matches, formatter=v=>esc(v)){
-  return `<tr><td><strong>${esc(label)}</strong></td><td>${formatter(invoiceValue)}</td><td>${formatter(poValue)}</td><td class="${matches?'ok':'bad'}">${matches?'✓ Match':'⚠ Review'}</td></tr>`;
+function financialRow(label,invoiceValue,poValue,currency){
+  const comparable=invoiceValue!==null&&invoiceValue!==undefined&&poValue!==null&&poValue!==undefined;
+  return comparisonRow(label,invoiceValue,poValue,comparable?sameNumber(invoiceValue,poValue):false,v=>money(currency,v),comparable);
+}
+function lineItemMatchingHtml(matching,currency){
+  const rows=Array.isArray(matching.line_item_matching)?matching.line_item_matching:[];
+  if(!rows.length)return `<div class="section-block"><div class="section-head"><div><div class="eyebrow">Line controls</div><h3>Line-item matching</h3></div></div><div class="empty">No line-item matching details were returned.</div></div>`;
+  const body=rows.map(row=>{
+    const matched=row.status==='MATCH',unmatched=row.status==='UNMATCHED',issues=Array.isArray(row.exceptions)?row.exceptions:[];
+    const status=matched?'<span class="ok">✓ Match</span>':`<span class="bad">⚠ ${unmatched?'Unmatched':'Review'}</span>${issues.length?`<div class="line-detail">${issues.map(esc).join(', ')}</div>`:''}`;
+    return `<tr class="${unmatched?'unmatched-row':''}"><td>${esc(row.description??'—')}<div class="line-detail">Invoice line ${esc(row.invoice_line??'—')}</div></td><td>${esc(row.po_description??'—')}<div class="line-detail">PO line ${esc(row.po_line??'—')}</div></td><td class="mono">${esc(row.invoice_quantity??'—')} / ${esc(row.po_quantity??'—')}</td><td class="mono">${money(currency,row.invoice_unit_price)} / ${money(currency,row.po_unit_price)}</td><td class="mono">${money(currency,row.invoice_amount)} / ${money(currency,row.po_amount)}</td><td class="line-status">${status}</td></tr>`;
+  }).join('');
+  return `<div class="section-block"><div class="section-head"><div><div class="eyebrow">Line controls</div><h3>Line-item matching</h3></div><span class="muted">${rows.length} result${rows.length===1?'':'s'}</span></div><div class="table-wrap"><table class="compare"><thead><tr><th>Invoice item</th><th>PO item</th><th>Qty (Inv / PO)</th><th>Unit price (Inv / PO)</th><th>Amount (Inv / PO)</th><th>Status</th></tr></thead><tbody>${body}</tbody></table></div></div>`;
 }
 
 function confidenceHtml(title, confidence){
@@ -107,7 +160,6 @@ function confidenceHtml(title, confidence){
 function displayResult(data){
   currentInvoiceId=data.invoice_id; lastResult=data;
   const invoice=data.invoice||{}; const po=data.purchase_order||{}; const matching=data.matching||{decision:'EXCEPTION',exceptions:[]};
-  const invLine=lineSummary(invoice.line_items), poLine=lineSummary(po.line_items);
   const isMatch=matching.decision==='MATCH';
   const exceptions=Array.isArray(matching.exceptions)?matching.exceptions:[];
   const route=Array.isArray(data.route)?data.route.join(', '):(data.route||'Not assigned');
@@ -122,13 +174,28 @@ function displayResult(data){
       ${comparisonRow('Vendor',invoice.vendor,po.vendor,sameText(invoice.vendor,po.vendor))}
       ${comparisonRow('PO Number',invoice.po_number,po.po_number,sameText(invoice.po_number,po.po_number))}
       ${comparisonRow('Currency',invoice.currency,po.currency,sameText(invoice.currency,po.currency))}
-      ${comparisonRow('Quantity',invLine.qty,poLine.qty,sameNumber(invLine.qty,poLine.qty))}
-      ${comparisonRow('Unit Price',invLine.price,poLine.price,sameNumber(invLine.price,poLine.price),v=>typeof v==='number'?money(invoice.currency,v):esc(v))}
-      ${comparisonRow('Total',invoice.total,po.total,sameNumber(invoice.total,po.total),v=>money(invoice.currency,v))}
-    </tbody></table>`;
+    </tbody></table>
+    <div class="section-block"><div class="section-head"><div><div class="eyebrow">Financial controls</div><h3>Financial summary</h3></div></div><table class="compare"><thead><tr><th>Field</th><th>Invoice</th><th>Purchase Order</th><th>Status</th></tr></thead><tbody>
+      ${financialRow('Subtotal',invoice.subtotal,po.subtotal,invoice.currency||po.currency)}
+      ${financialRow('Tax',invoice.tax,po.tax,invoice.currency||po.currency)}
+      ${financialRow('Total',invoice.total,po.total,invoice.currency||po.currency)}
+    </tbody></table></div>
+    ${lineItemMatchingHtml(matching,invoice.currency||po.currency)}`;
 
   if(!isMatch){
-    html+=`<div class="two-col"><div class="subcard"><h3>Detected exceptions</h3><ul class="exception-list">${exceptions.map(x=>`<li><strong>${esc(x.type)}</strong><br><span class="muted">${esc(x.message)}</span></li>`).join('')||'<li>No exception details returned.</li>'}</ul><p><strong>Routed to:</strong> ${esc(route)}</p></div>
+    html+=`<div class="two-col"><div class="subcard">
+      <div class="eyebrow">Exception category</div>
+      <h3>${esc(formatReason(matching.reason))}</h3>
+      <ul class="exception-list">
+        ${exceptions.map(x=>`
+          <li>
+            <strong>${esc(formatExceptionType(x.type))}</strong><br>
+            <span class="muted">${esc(x.message)}</span>
+          </li>
+        `).join('') || '<li>No exception details returned.</li>'}
+      </ul>
+      <p><strong>Routed to:</strong> ${esc(route)}</p>
+    </div>
     <div class="subcard ai-card"><div class="ai-label">✦ AI exception analysis</div><h3>${esc(analysis.summary||'No analysis available')}</h3><p><strong>Severity:</strong> ${esc(analysis.severity||'N/A')}</p><p><strong>Suggested action:</strong><br>${esc(analysis.recommended_action||'N/A')}</p><p class="muted"><small>AI-generated explanation. Matching controls remain authoritative.</small></p></div></div>`;
   }
 

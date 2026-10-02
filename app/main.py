@@ -9,6 +9,7 @@ from app.extraction import extract_invoice
 from app.po_extraction import extract_po
 from app.database import get_purchase_order
 from app.matching import match_invoice_to_po
+from app.validation import validate_document_financials
 from app.agents import explain_exception
 from app.routing import determine_route
 from app.storage import (
@@ -63,213 +64,6 @@ def root():
     return {
         "message": "Invoice Agent is running"
     }
-
-
-@app.post("/process-invoice")
-async def process_invoice(
-    file: UploadFile = File(...)
-):
-
-    invoice_id = str(uuid.uuid4())
-
-    file_path = os.path.join(
-        UPLOAD_DIR,
-        f"{invoice_id}.pdf"
-    )
-
-    with open(file_path, "wb") as f:
-        f.write(await file.read())
-
-
-        log_event(
-            invoice_id,
-            "INVOICE_RECEIVED",
-            {
-                "filename": file.filename
-            }
-    )
-
-    # 1. Extract invoice
-    # 1. Extract invoice
-    extracted = extract_invoice(file_path)
-
-    invoice = extracted["invoice"]
-    confidence = extracted["confidence"]
-
-    log_event(
-        invoice_id,
-        "INVOICE_EXTRACTED",
-        {
-            "invoice": invoice,
-            "confidence": confidence
-        }
-    )
-
-
-    # 2. Check for duplicate invoice
-    is_duplicate = invoice_exists(
-        invoice["vendor"],
-        invoice["invoice_number"]
-    )
-
-    log_event(
-        invoice_id,
-        "DUPLICATE_CHECK",
-        {
-            "is_duplicate": is_duplicate
-        }
-    )
-
-    # 3. Check extraction confidence
-    LOW_CONFIDENCE_THRESHOLD = 0.95
-
-    low_confidence_fields = []
-
-    for field, score in confidence.items():
-        if score < LOW_CONFIDENCE_THRESHOLD:
-            low_confidence_fields.append({
-                "field": field,
-                "confidence": score
-            })
-
-
-    log_event(
-        invoice_id,
-        "CONFIDENCE_CHECK",
-        {
-            "threshold": LOW_CONFIDENCE_THRESHOLD,
-            "low_confidence_fields": low_confidence_fields
-        }
-    )
-
-    # 4. Find PO
-    po_number = invoice.get("po_number")
-
-    po = None
-
-    if po_number:
-        po = get_purchase_order(po_number)
-
-    log_event(
-        invoice_id,
-        "PO_LOOKUP",
-        {
-            "po_number": po_number,
-            "found": po is not None
-        }
-    )
-
-
-    # 5. Match or flag exception
-
-    if is_duplicate:
-
-        matching_result = {
-            "decision": "EXCEPTION",
-            "reason": "DUPLICATE_INVOICE",
-            "exceptions": [
-                {
-                    "type": "DUPLICATE_INVOICE",
-                    "message": (
-                        "This vendor and invoice number "
-                        "have already been processed."
-                    )
-                }
-            ]
-        }
-
-    elif low_confidence_fields:
-
-        matching_result = {
-            "decision": "EXCEPTION",
-            "reason": "LOW_EXTRACTION_CONFIDENCE",
-            "exceptions": [
-                {
-                    "type": "LOW_CONFIDENCE",
-                    "message": (
-                        f"Field {item['field']} has confidence "
-                        f"{item['confidence']:.2f}"
-                    )
-                }
-                for item in low_confidence_fields
-            ]
-        }
-
-    else:
-
-        matching_result = match_invoice_to_po(
-            invoice,
-            po
-        )
-
-
-    log_event(
-        invoice_id,
-        "MATCH_COMPLETED",
-        matching_result
-    )
-
-    # 6. Routing
-    route = None
-
-    if matching_result["decision"] == "EXCEPTION":
-        route = determine_route(
-            matching_result["exceptions"]
-    )
-
-    # 7. Exception reasoning
-    explanation = None
-
-    if matching_result["decision"] == "EXCEPTION":
-
-        explanation = explain_exception(
-            invoice,
-            po,
-            matching_result
-        )
-    if explanation is not None:
-        log_event(
-            invoice_id,
-            "EXCEPTION_ANALYZED",
-            {
-                "analysis": explanation
-            }
-        )
-
-    if route:
-        log_event(
-            invoice_id,
-            "ROUTED_FOR_REVIEW",
-            {
-                "route": route
-            }
-        )
-
-    # 8. Save invoice to database
-
-    save_invoice(
-        invoice_id,
-        invoice,
-        matching_result["decision"]
-    )
-
-    log_event(
-        invoice_id,
-        "INVOICE_SAVED",
-        {
-            "status": matching_result["decision"]
-        }
-    )
-
-    return {
-    "invoice_id": invoice_id,
-    "invoice": invoice,
-    "confidence": confidence,
-    "purchase_order": po,
-    "matching": matching_result,
-    "route": route,
-    "exception_analysis": explanation
-}
 
 
 
@@ -362,9 +156,98 @@ async def process_documents(
     # Extract invoice
     # ----------------------------
 
-    invoice_extracted = extract_invoice(
-        invoice_path
-    )
+    invoice_result = extract_invoice(
+            invoice_path
+        )
+
+
+    # ----------------------------
+    # Extract PO
+    # ----------------------------
+
+    po_result = extract_po(
+            po_path
+        )
+
+
+    # ----------------------------
+    # Schema / extraction validation
+    # ----------------------------
+
+    extraction_errors = []
+
+    if not invoice_result["success"]:
+        extraction_errors.append(
+            invoice_result["error"]
+        )
+
+    if not po_result["success"]:
+        extraction_errors.append(
+            po_result["error"]
+        )
+
+
+    if extraction_errors:
+
+        matching_result = {
+            "decision": "EXCEPTION",
+            "reason": "EXTRACTION_VALIDATION_FAILURE",
+            "exceptions": extraction_errors,
+            "line_item_matching": []
+        }
+
+        log_event(
+            invoice_id,
+            "EXTRACTION_VALIDATION_FAILED",
+            {
+                "errors": extraction_errors
+            }
+        )
+
+        route = determine_route(
+            extraction_errors
+        )
+
+        log_event(
+            invoice_id,
+            "ROUTED_FOR_REVIEW",
+            {
+                "route": route
+            }
+        )
+
+        return {
+            "invoice_id": invoice_id,
+
+            "invoice": {},
+
+            "invoice_confidence": {},
+
+            "purchase_order": {},
+
+            "po_confidence": {},
+
+            "matching": matching_result,
+
+            "route": route,
+
+            "exception_analysis": {
+                "summary": "Document extraction validation failed.",
+                "severity": "High",
+                "recommended_action": (
+                    "Review the source document and extracted fields "
+                    "before continuing with invoice matching."
+                )
+            }
+        }
+
+
+    # ----------------------------
+    # Use validated extraction data
+    # ----------------------------
+
+    invoice_extracted = invoice_result["data"]
+    po_extracted = po_result["data"]
 
     invoice = invoice_extracted["invoice"]
 
@@ -372,20 +255,12 @@ async def process_documents(
         invoice_extracted["confidence"]
     )
 
-
-    # ----------------------------
-    # Extract PO
-    # ----------------------------
-
-    po_extracted = extract_po(
-        po_path
-    )
-
     po = po_extracted["purchase_order"]
 
     po_confidence = (
         po_extracted["confidence"]
     )
+
 
 
     log_event(
@@ -396,6 +271,37 @@ async def process_documents(
             "invoice_confidence": invoice_confidence,
             "purchase_order": po,
             "po_confidence": po_confidence
+        }
+    )
+
+
+
+    # ----------------------------
+    # Financial sanity validation
+    # ----------------------------
+
+    financial_exceptions = []
+
+    financial_exceptions.extend(
+        validate_document_financials(
+            invoice,
+            "invoice"
+        )
+    )
+
+    financial_exceptions.extend(
+        validate_document_financials(
+            po,
+            "purchase_order"
+        )
+    )
+
+
+    log_event(
+        invoice_id,
+        "FINANCIAL_VALIDATION_COMPLETED",
+        {
+            "exceptions": financial_exceptions
         }
     )
 
@@ -459,6 +365,15 @@ async def process_documents(
                     )
                 }
             ]
+        }
+
+    elif financial_exceptions:
+
+        matching_result = {
+            "decision": "EXCEPTION",
+            "reason": "FINANCIAL_VALIDATION_FAILURE",
+            "exceptions": financial_exceptions,
+            "line_item_matching": []
         }
 
 

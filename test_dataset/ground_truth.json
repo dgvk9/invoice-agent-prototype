@@ -1,0 +1,5161 @@
+{
+  "dataset_name": "Synthetic Indian IT Procurement Invoice-PO Benchmark",
+  "version": "1.0",
+  "seed": 20260925,
+  "synthetic": true,
+  "buyer": {
+    "name": "BluePeak Digital Operations Pvt Ltd",
+    "address": "42 Innovation Park, Whitefield, Bengaluru, Karnataka 560066",
+    "state": "Karnataka",
+    "state_code": "29",
+    "gstin": "29AABCB1234C1Z7"
+  },
+  "case_count": 50,
+  "cases": [
+    {
+      "case_id": "CASE-001",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0001",
+        "invoice_date": "2026-04-03",
+        "po_number": "PO-26-0001",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 27500.0,
+            "amount": 275000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 3,
+            "unit_price": 17600.0,
+            "amount": 52800.0
+          }
+        ],
+        "subtotal": 327800.0,
+        "tax_rate": 0.18,
+        "cgst": 29502.0,
+        "sgst": 29502.0,
+        "igst": 0.0,
+        "tax": 59004.0,
+        "total": 386804.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0001",
+        "po_date": "2026-03-27",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 27500.0,
+            "amount": 275000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 3,
+            "unit_price": 17600.0,
+            "amount": 52800.0
+          }
+        ],
+        "subtotal": 327800.0,
+        "tax_rate": 0.18,
+        "cgst": 29502.0,
+        "sgst": 29502.0,
+        "igst": 0.0,
+        "tax": 59004.0,
+        "total": 386804.0
+      },
+      "invoice_format": "png",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-001-invoice.png",
+      "po_file": "purchase_orders/CASE-001-po.pdf"
+    },
+    {
+      "case_id": "CASE-002",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0002",
+        "invoice_date": "2026-04-05",
+        "po_number": "PO-26-0002",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 7650.0,
+            "amount": 7650.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 23100.0,
+            "amount": 23100.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 10,
+            "unit_price": 21000.0,
+            "amount": 210000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12600.0,
+            "amount": 12600.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16800.0,
+            "amount": 16800.0
+          }
+        ],
+        "subtotal": 270150.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 48627.0,
+        "tax": 48627.0,
+        "total": 318777.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0002",
+        "po_date": "2026-03-24",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 7650.0,
+            "amount": 7650.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 23100.0,
+            "amount": 23100.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 10,
+            "unit_price": 21000.0,
+            "amount": 210000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12600.0,
+            "amount": 12600.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16800.0,
+            "amount": 16800.0
+          }
+        ],
+        "subtotal": 270150.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 48627.0,
+        "tax": 48627.0,
+        "total": 318777.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-002-invoice.pdf",
+      "po_file": "purchase_orders/CASE-002-po.pdf"
+    },
+    {
+      "case_id": "CASE-003",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0003",
+        "invoice_date": "2026-04-07",
+        "po_number": "PO-26-0003",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 10,
+            "unit_price": 13200.0,
+            "amount": 132000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 18375.0,
+            "amount": 91875.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 9900.0,
+            "amount": 9900.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 24200.0,
+            "amount": 24200.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 18000.0,
+            "amount": 90000.0
+          }
+        ],
+        "subtotal": 347975.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 62635.5,
+        "tax": 62635.5,
+        "total": 410610.5
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0003",
+        "po_date": "2026-03-12",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 10,
+            "unit_price": 13200.0,
+            "amount": 132000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 18375.0,
+            "amount": 91875.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 9900.0,
+            "amount": 9900.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 24200.0,
+            "amount": 24200.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 18000.0,
+            "amount": 90000.0
+          }
+        ],
+        "subtotal": 347975.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 62635.5,
+        "tax": 62635.5,
+        "total": 410610.5
+      },
+      "invoice_format": "png",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-003-invoice.png",
+      "po_file": "purchase_orders/CASE-003-po.pdf"
+    },
+    {
+      "case_id": "CASE-004",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0004",
+        "invoice_date": "2026-04-09",
+        "po_number": "PO-26-0004",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 24200.0,
+            "amount": 121000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 17500.0,
+            "amount": 35000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 13500.0,
+            "amount": 27000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 13200.0,
+            "amount": 13200.0
+          }
+        ],
+        "subtotal": 196200.0,
+        "tax_rate": 0.18,
+        "cgst": 17658.0,
+        "sgst": 17658.0,
+        "igst": 0.0,
+        "tax": 35316.0,
+        "total": 231516.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0004",
+        "po_date": "2026-03-23",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 24200.0,
+            "amount": 121000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 17500.0,
+            "amount": 35000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 13500.0,
+            "amount": 27000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 13200.0,
+            "amount": 13200.0
+          }
+        ],
+        "subtotal": 196200.0,
+        "tax_rate": 0.18,
+        "cgst": 17658.0,
+        "sgst": 17658.0,
+        "igst": 0.0,
+        "tax": 35316.0,
+        "total": 231516.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-004-invoice.pdf",
+      "po_file": "purchase_orders/CASE-004-po.pdf"
+    },
+    {
+      "case_id": "CASE-005",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0005",
+        "invoice_date": "2026-04-11",
+        "po_number": "PO-26-0005",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 18900.0,
+            "amount": 56700.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 12600.0,
+            "amount": 25200.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 22000.0,
+            "amount": 220000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 27500.0,
+            "amount": 27500.0
+          }
+        ],
+        "subtotal": 329400.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 59292.0,
+        "tax": 59292.0,
+        "total": 388692.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0005",
+        "po_date": "2026-03-23",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 18900.0,
+            "amount": 56700.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 12600.0,
+            "amount": 25200.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 22000.0,
+            "amount": 220000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 27500.0,
+            "amount": 27500.0
+          }
+        ],
+        "subtotal": 329400.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 59292.0,
+        "tax": 59292.0,
+        "total": 388692.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "jpg",
+      "invoice_file": "invoices/CASE-005-invoice.pdf",
+      "po_file": "purchase_orders/CASE-005-po.jpg"
+    },
+    {
+      "case_id": "CASE-006",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0006",
+        "invoice_date": "2026-04-13",
+        "po_number": "PO-26-0006",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12000.0,
+            "amount": 60000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 22500.0,
+            "amount": 67500.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 16200.0,
+            "amount": 16200.0
+          }
+        ],
+        "subtotal": 143700.0,
+        "tax_rate": 0.18,
+        "cgst": 12933.0,
+        "sgst": 12933.0,
+        "igst": 0.0,
+        "tax": 25866.0,
+        "total": 169566.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0006",
+        "po_date": "2026-04-04",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12000.0,
+            "amount": 60000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 22500.0,
+            "amount": 67500.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 16200.0,
+            "amount": 16200.0
+          }
+        ],
+        "subtotal": 143700.0,
+        "tax_rate": 0.18,
+        "cgst": 12933.0,
+        "sgst": 12933.0,
+        "igst": 0.0,
+        "tax": 25866.0,
+        "total": 169566.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-006-invoice.pdf",
+      "po_file": "purchase_orders/CASE-006-po.pdf"
+    },
+    {
+      "case_id": "CASE-007",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0007",
+        "invoice_date": "2026-04-15",
+        "po_number": "PO-26-0007",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12000.0,
+            "amount": 60000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 20000.0,
+            "amount": 100000.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 19800.0,
+            "amount": 99000.0
+          }
+        ],
+        "subtotal": 259000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 46620.0,
+        "tax": 46620.0,
+        "total": 305620.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0007",
+        "po_date": "2026-04-01",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12000.0,
+            "amount": 60000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 20000.0,
+            "amount": 100000.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 19800.0,
+            "amount": 99000.0
+          }
+        ],
+        "subtotal": 259000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 46620.0,
+        "tax": 46620.0,
+        "total": 305620.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "jpg",
+      "invoice_file": "invoices/CASE-007-invoice.pdf",
+      "po_file": "purchase_orders/CASE-007-po.jpg"
+    },
+    {
+      "case_id": "CASE-008",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0008",
+        "invoice_date": "2026-04-17",
+        "po_number": "PO-26-0008",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 10,
+            "unit_price": 13500.0,
+            "amount": 135000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 17600.0,
+            "amount": 35200.0
+          }
+        ],
+        "subtotal": 170200.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 30636.0,
+        "tax": 30636.0,
+        "total": 200836.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0008",
+        "po_date": "2026-04-10",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 10,
+            "unit_price": 13500.0,
+            "amount": 135000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 17600.0,
+            "amount": 35200.0
+          }
+        ],
+        "subtotal": 170200.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 30636.0,
+        "tax": 30636.0,
+        "total": 200836.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "scan_jpg",
+      "invoice_file": "invoices/CASE-008-invoice.pdf",
+      "po_file": "purchase_orders/CASE-008-po.jpg"
+    },
+    {
+      "case_id": "CASE-009",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0009",
+        "invoice_date": "2026-04-19",
+        "po_number": "PO-26-0009",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19250.0,
+            "amount": 192500.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 21000.0,
+            "amount": 105000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 2,
+            "unit_price": 9350.0,
+            "amount": 18700.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 16800.0,
+            "amount": 84000.0
+          }
+        ],
+        "subtotal": 420000.0,
+        "tax_rate": 0.18,
+        "cgst": 37800.0,
+        "sgst": 37800.0,
+        "igst": 0.0,
+        "tax": 75600.0,
+        "total": 495600.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0009",
+        "po_date": "2026-04-12",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19250.0,
+            "amount": 192500.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 21000.0,
+            "amount": 105000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 2,
+            "unit_price": 9350.0,
+            "amount": 18700.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 16800.0,
+            "amount": 84000.0
+          }
+        ],
+        "subtotal": 420000.0,
+        "tax_rate": 0.18,
+        "cgst": 37800.0,
+        "sgst": 37800.0,
+        "igst": 0.0,
+        "tax": 75600.0,
+        "total": 495600.0
+      },
+      "invoice_format": "png",
+      "po_format": "scan_jpg",
+      "invoice_file": "invoices/CASE-009-invoice.png",
+      "po_file": "purchase_orders/CASE-009-po.jpg"
+    },
+    {
+      "case_id": "CASE-010",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0010",
+        "invoice_date": "2026-04-21",
+        "po_number": "PO-26-0010",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 19800.0,
+            "amount": 59400.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16800.0,
+            "amount": 16800.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 8925.0,
+            "amount": 8925.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 24200.0,
+            "amount": 72600.0
+          }
+        ],
+        "subtotal": 157725.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 28390.5,
+        "tax": 28390.5,
+        "total": 186115.5
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0010",
+        "po_date": "2026-04-02",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 19800.0,
+            "amount": 59400.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16800.0,
+            "amount": 16800.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 8925.0,
+            "amount": 8925.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 24200.0,
+            "amount": 72600.0
+          }
+        ],
+        "subtotal": 157725.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 28390.5,
+        "tax": 28390.5,
+        "total": 186115.5
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-010-invoice.pdf",
+      "po_file": "purchase_orders/CASE-010-po.pdf"
+    },
+    {
+      "case_id": "CASE-011",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0011",
+        "invoice_date": "2026-04-23",
+        "po_number": "PO-26-0011",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 11000.0,
+            "amount": 110000.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 16200.0,
+            "amount": 81000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          }
+        ],
+        "subtotal": 213000.0,
+        "tax_rate": 0.18,
+        "cgst": 19170.0,
+        "sgst": 19170.0,
+        "igst": 0.0,
+        "tax": 38340.0,
+        "total": 251340.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0011",
+        "po_date": "2026-03-27",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 11000.0,
+            "amount": 110000.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 16200.0,
+            "amount": 81000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          }
+        ],
+        "subtotal": 213000.0,
+        "tax_rate": 0.18,
+        "cgst": 19170.0,
+        "sgst": 19170.0,
+        "igst": 0.0,
+        "tax": 38340.0,
+        "total": 251340.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "scan_jpg",
+      "invoice_file": "invoices/CASE-011-invoice.pdf",
+      "po_file": "purchase_orders/CASE-011-po.jpg"
+    },
+    {
+      "case_id": "CASE-012",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0012",
+        "invoice_date": "2026-04-25",
+        "po_number": "PO-26-0012",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 18000.0,
+            "amount": 18000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 23100.0,
+            "amount": 69300.0
+          }
+        ],
+        "subtotal": 87300.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 15714.0,
+        "tax": 15714.0,
+        "total": 103014.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0012",
+        "po_date": "2026-03-30",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 18000.0,
+            "amount": 18000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 23100.0,
+            "amount": 69300.0
+          }
+        ],
+        "subtotal": 87300.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 15714.0,
+        "tax": 15714.0,
+        "total": 103014.0
+      },
+      "invoice_format": "png",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-012-invoice.png",
+      "po_file": "purchase_orders/CASE-012-po.pdf"
+    },
+    {
+      "case_id": "CASE-013",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0013",
+        "invoice_date": "2026-04-27",
+        "po_number": "PO-26-0013",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 2,
+            "unit_price": 12100.0,
+            "amount": 24200.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 18900.0,
+            "amount": 189000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 5,
+            "unit_price": 16500.0,
+            "amount": 82500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          }
+        ],
+        "subtotal": 307700.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 55386.0,
+        "tax": 55386.0,
+        "total": 363086.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0013",
+        "po_date": "2026-03-30",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 2,
+            "unit_price": 12100.0,
+            "amount": 24200.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 18900.0,
+            "amount": 189000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 5,
+            "unit_price": 16500.0,
+            "amount": 82500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          }
+        ],
+        "subtotal": 307700.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 55386.0,
+        "tax": 55386.0,
+        "total": 363086.0
+      },
+      "invoice_format": "png",
+      "po_format": "jpg",
+      "invoice_file": "invoices/CASE-013-invoice.png",
+      "po_file": "purchase_orders/CASE-013-po.jpg"
+    },
+    {
+      "case_id": "CASE-014",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0014",
+        "invoice_date": "2026-04-29",
+        "po_number": "PO-26-0014",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 15000.0,
+            "amount": 30000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 25000.0,
+            "amount": 25000.0
+          }
+        ],
+        "subtotal": 55000.0,
+        "tax_rate": 0.18,
+        "cgst": 4950.0,
+        "sgst": 4950.0,
+        "igst": 0.0,
+        "tax": 9900.0,
+        "total": 64900.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0014",
+        "po_date": "2026-04-07",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 15000.0,
+            "amount": 30000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 25000.0,
+            "amount": 25000.0
+          }
+        ],
+        "subtotal": 55000.0,
+        "tax_rate": 0.18,
+        "cgst": 4950.0,
+        "sgst": 4950.0,
+        "igst": 0.0,
+        "tax": 9900.0,
+        "total": 64900.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-014-invoice.pdf",
+      "po_file": "purchase_orders/CASE-014-po.png"
+    },
+    {
+      "case_id": "CASE-015",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0015",
+        "invoice_date": "2026-05-01",
+        "po_number": "PO-26-0015",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 18375.0,
+            "amount": 36750.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 3,
+            "unit_price": 16800.0,
+            "amount": 50400.0
+          }
+        ],
+        "subtotal": 87150.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 15687.0,
+        "tax": 15687.0,
+        "total": 102837.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0015",
+        "po_date": "2026-04-09",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 18375.0,
+            "amount": 36750.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 3,
+            "unit_price": 16800.0,
+            "amount": 50400.0
+          }
+        ],
+        "subtotal": 87150.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 15687.0,
+        "tax": 15687.0,
+        "total": 102837.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-015-invoice.pdf",
+      "po_file": "purchase_orders/CASE-015-po.pdf"
+    },
+    {
+      "case_id": "CASE-016",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0016",
+        "invoice_date": "2026-05-03",
+        "po_number": "PO-26-0016",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 8500.0,
+            "amount": 25500.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 22000.0,
+            "amount": 110000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 13200.0,
+            "amount": 13200.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19800.0,
+            "amount": 198000.0
+          }
+        ],
+        "subtotal": 361700.0,
+        "tax_rate": 0.18,
+        "cgst": 32553.0,
+        "sgst": 32553.0,
+        "igst": 0.0,
+        "tax": 65106.0,
+        "total": 426806.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0016",
+        "po_date": "2026-04-11",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 8500.0,
+            "amount": 25500.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 22000.0,
+            "amount": 110000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 13200.0,
+            "amount": 13200.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19800.0,
+            "amount": 198000.0
+          }
+        ],
+        "subtotal": 361700.0,
+        "tax_rate": 0.18,
+        "cgst": 32553.0,
+        "sgst": 32553.0,
+        "igst": 0.0,
+        "tax": 65106.0,
+        "total": 426806.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-016-invoice.pdf",
+      "po_file": "purchase_orders/CASE-016-po.pdf"
+    },
+    {
+      "case_id": "CASE-017",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0017",
+        "invoice_date": "2026-05-05",
+        "po_number": "PO-26-0017",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          }
+        ],
+        "subtotal": 34800.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 6264.0,
+        "tax": 6264.0,
+        "total": 41064.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0017",
+        "po_date": "2026-04-12",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          }
+        ],
+        "subtotal": 34800.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 6264.0,
+        "tax": 6264.0,
+        "total": 41064.0
+      },
+      "invoice_format": "jpg",
+      "po_format": "jpg",
+      "invoice_file": "invoices/CASE-017-invoice.jpg",
+      "po_file": "purchase_orders/CASE-017-po.jpg"
+    },
+    {
+      "case_id": "CASE-018",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0018",
+        "invoice_date": "2026-05-07",
+        "po_number": "PO-26-0018",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19800.0,
+            "amount": 198000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12600.0,
+            "amount": 63000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 17500.0,
+            "amount": 17500.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 22500.0,
+            "amount": 22500.0
+          }
+        ],
+        "subtotal": 301000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 54180.0,
+        "tax": 54180.0,
+        "total": 355180.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0018",
+        "po_date": "2026-04-22",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19800.0,
+            "amount": 198000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12600.0,
+            "amount": 63000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 17500.0,
+            "amount": 17500.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 22500.0,
+            "amount": 22500.0
+          }
+        ],
+        "subtotal": 301000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 54180.0,
+        "tax": 54180.0,
+        "total": 355180.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "jpg",
+      "invoice_file": "invoices/CASE-018-invoice.pdf",
+      "po_file": "purchase_orders/CASE-018-po.jpg"
+    },
+    {
+      "case_id": "CASE-019",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0019",
+        "invoice_date": "2026-05-09",
+        "po_number": "PO-26-0019",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 10800.0,
+            "amount": 32400.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 25000.0,
+            "amount": 25000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 12100.0,
+            "amount": 36300.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 21000.0,
+            "amount": 42000.0
+          }
+        ],
+        "subtotal": 135700.0,
+        "tax_rate": 0.18,
+        "cgst": 12213.0,
+        "sgst": 12213.0,
+        "igst": 0.0,
+        "tax": 24426.0,
+        "total": 160126.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0019",
+        "po_date": "2026-04-17",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 10800.0,
+            "amount": 32400.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 25000.0,
+            "amount": 25000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 12100.0,
+            "amount": 36300.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 21000.0,
+            "amount": 42000.0
+          }
+        ],
+        "subtotal": 135700.0,
+        "tax_rate": 0.18,
+        "cgst": 12213.0,
+        "sgst": 12213.0,
+        "igst": 0.0,
+        "tax": 24426.0,
+        "total": 160126.0
+      },
+      "invoice_format": "png",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-019-invoice.png",
+      "po_file": "purchase_orders/CASE-019-po.pdf"
+    },
+    {
+      "case_id": "CASE-020",
+      "category": "IT Software & Technology Services",
+      "scenario": "CLEAN_MATCH",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0020",
+        "invoice_date": "2026-05-11",
+        "po_number": "PO-26-0020",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 7650.0,
+            "amount": 76500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 10,
+            "unit_price": 12000.0,
+            "amount": 120000.0
+          }
+        ],
+        "subtotal": 196500.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 35370.0,
+        "tax": 35370.0,
+        "total": 231870.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0020",
+        "po_date": "2026-04-25",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 7650.0,
+            "amount": 76500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 10,
+            "unit_price": 12000.0,
+            "amount": 120000.0
+          }
+        ],
+        "subtotal": 196500.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 35370.0,
+        "tax": 35370.0,
+        "total": 231870.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-020-invoice.pdf",
+      "po_file": "purchase_orders/CASE-020-po.pdf"
+    },
+    {
+      "case_id": "CASE-021",
+      "category": "IT Software & Technology Services",
+      "scenario": "PRICE_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PRICE_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0021",
+        "invoice_date": "2026-05-13",
+        "po_number": "PO-26-0021",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 9180.0,
+            "amount": 45900.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 16500.0,
+            "amount": 33000.0
+          }
+        ],
+        "subtotal": 78900.0,
+        "tax_rate": 0.18,
+        "cgst": 7101.0,
+        "sgst": 7101.0,
+        "igst": 0.0,
+        "tax": 14202.0,
+        "total": 93102.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0021",
+        "po_date": "2026-04-18",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 8500.0,
+            "amount": 42500.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 16500.0,
+            "amount": 33000.0
+          }
+        ],
+        "subtotal": 75500.0,
+        "tax_rate": 0.18,
+        "cgst": 6795.0,
+        "sgst": 6795.0,
+        "igst": 0.0,
+        "tax": 13590.0,
+        "total": 89090.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-021-invoice.pdf",
+      "po_file": "purchase_orders/CASE-021-po.pdf"
+    },
+    {
+      "case_id": "CASE-022",
+      "category": "IT Software & Technology Services",
+      "scenario": "PRICE_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PRICE_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0022",
+        "invoice_date": "2026-05-15",
+        "po_number": "PO-26-0022",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 17010.0,
+            "amount": 51030.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 13200.0,
+            "amount": 26400.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 26250.0,
+            "amount": 262500.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          }
+        ],
+        "subtotal": 359730.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 64751.4,
+        "tax": 64751.4,
+        "total": 424481.4
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0022",
+        "po_date": "2026-05-06",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 15750.0,
+            "amount": 47250.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 13200.0,
+            "amount": 26400.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 26250.0,
+            "amount": 262500.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          }
+        ],
+        "subtotal": 355950.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 64071.0,
+        "tax": 64071.0,
+        "total": 420021.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-022-invoice.pdf",
+      "po_file": "purchase_orders/CASE-022-po.pdf"
+    },
+    {
+      "case_id": "CASE-023",
+      "category": "IT Software & Technology Services",
+      "scenario": "PRICE_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PRICE_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0023",
+        "invoice_date": "2026-05-17",
+        "po_number": "PO-26-0023",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 14580.0,
+            "amount": 43740.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 14400.0,
+            "amount": 14400.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 8925.0,
+            "amount": 89250.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 18000.0,
+            "amount": 36000.0
+          }
+        ],
+        "subtotal": 183390.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 33010.2,
+        "tax": 33010.2,
+        "total": 216400.2
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0023",
+        "po_date": "2026-05-10",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 13500.0,
+            "amount": 40500.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 14400.0,
+            "amount": 14400.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 8925.0,
+            "amount": 89250.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 18000.0,
+            "amount": 36000.0
+          }
+        ],
+        "subtotal": 180150.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 32427.0,
+        "tax": 32427.0,
+        "total": 212577.0
+      },
+      "invoice_format": "png",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-023-invoice.png",
+      "po_file": "purchase_orders/CASE-023-po.pdf"
+    },
+    {
+      "case_id": "CASE-024",
+      "category": "IT Software & Technology Services",
+      "scenario": "PRICE_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PRICE_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0024",
+        "invoice_date": "2026-05-19",
+        "po_number": "PO-26-0024",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 22680.0,
+            "amount": 45360.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 8500.0,
+            "amount": 85000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 27500.0,
+            "amount": 27500.0
+          }
+        ],
+        "subtotal": 157860.0,
+        "tax_rate": 0.18,
+        "cgst": 14207.4,
+        "sgst": 14207.4,
+        "igst": 0.0,
+        "tax": 28414.8,
+        "total": 186274.8
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0024",
+        "po_date": "2026-05-04",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 21000.0,
+            "amount": 42000.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 8500.0,
+            "amount": 85000.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 27500.0,
+            "amount": 27500.0
+          }
+        ],
+        "subtotal": 154500.0,
+        "tax_rate": 0.18,
+        "cgst": 13905.0,
+        "sgst": 13905.0,
+        "igst": 0.0,
+        "tax": 27810.0,
+        "total": 182310.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-024-invoice.pdf",
+      "po_file": "purchase_orders/CASE-024-po.pdf"
+    },
+    {
+      "case_id": "CASE-025",
+      "category": "IT Software & Technology Services",
+      "scenario": "PRICE_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PRICE_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0025",
+        "invoice_date": "2026-05-21",
+        "po_number": "PO-26-0025",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 9180.0,
+            "amount": 9180.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 21000.0,
+            "amount": 105000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 15750.0,
+            "amount": 47250.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          }
+        ],
+        "subtotal": 181230.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 32621.4,
+        "tax": 32621.4,
+        "total": 213851.4
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0025",
+        "po_date": "2026-05-03",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 8500.0,
+            "amount": 8500.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 21000.0,
+            "amount": 105000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 15750.0,
+            "amount": 47250.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          }
+        ],
+        "subtotal": 180550.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 32499.0,
+        "tax": 32499.0,
+        "total": 213049.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-025-invoice.pdf",
+      "po_file": "purchase_orders/CASE-025-po.png"
+    },
+    {
+      "case_id": "CASE-026",
+      "category": "IT Software & Technology Services",
+      "scenario": "QUANTITY_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "QUANTITY_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0026",
+        "invoice_date": "2026-05-23",
+        "po_number": "PO-26-0026",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 4,
+            "unit_price": 19800.0,
+            "amount": 79200.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 20000.0,
+            "amount": 20000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 10,
+            "unit_price": 15750.0,
+            "amount": 157500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 12000.0,
+            "amount": 24000.0
+          }
+        ],
+        "subtotal": 280700.0,
+        "tax_rate": 0.18,
+        "cgst": 25263.0,
+        "sgst": 25263.0,
+        "igst": 0.0,
+        "tax": 50526.0,
+        "total": 331226.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0026",
+        "po_date": "2026-04-23",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 19800.0,
+            "amount": 59400.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 20000.0,
+            "amount": 20000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 10,
+            "unit_price": 15750.0,
+            "amount": 157500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 12000.0,
+            "amount": 24000.0
+          }
+        ],
+        "subtotal": 260900.0,
+        "tax_rate": 0.18,
+        "cgst": 23481.0,
+        "sgst": 23481.0,
+        "igst": 0.0,
+        "tax": 46962.0,
+        "total": 307862.0
+      },
+      "invoice_format": "scan_jpg",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-026-invoice.jpg",
+      "po_file": "purchase_orders/CASE-026-po.pdf"
+    },
+    {
+      "case_id": "CASE-027",
+      "category": "IT Software & Technology Services",
+      "scenario": "QUANTITY_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "QUANTITY_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0027",
+        "invoice_date": "2026-05-25",
+        "po_number": "PO-26-0027",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 4,
+            "unit_price": 17500.0,
+            "amount": 70000.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19800.0,
+            "amount": 198000.0
+          }
+        ],
+        "subtotal": 268000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 48240.0,
+        "tax": 48240.0,
+        "total": 316240.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0027",
+        "po_date": "2026-05-15",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 17500.0,
+            "amount": 52500.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 19800.0,
+            "amount": 198000.0
+          }
+        ],
+        "subtotal": 250500.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 45090.0,
+        "tax": 45090.0,
+        "total": 295590.0
+      },
+      "invoice_format": "scan_jpg",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-027-invoice.jpg",
+      "po_file": "purchase_orders/CASE-027-po.pdf"
+    },
+    {
+      "case_id": "CASE-028",
+      "category": "IT Software & Technology Services",
+      "scenario": "QUANTITY_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "QUANTITY_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0028",
+        "invoice_date": "2026-05-27",
+        "po_number": "PO-26-0028",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 12000.0,
+            "amount": 24000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 16500.0,
+            "amount": 16500.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 11000.0,
+            "amount": 110000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 24200.0,
+            "amount": 121000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16000.0,
+            "amount": 16000.0
+          }
+        ],
+        "subtotal": 287500.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 51750.0,
+        "tax": 51750.0,
+        "total": 339250.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0028",
+        "po_date": "2026-05-08",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 16500.0,
+            "amount": 16500.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 11000.0,
+            "amount": 110000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 24200.0,
+            "amount": 121000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16000.0,
+            "amount": 16000.0
+          }
+        ],
+        "subtotal": 275500.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 49590.0,
+        "tax": 49590.0,
+        "total": 325090.0
+      },
+      "invoice_format": "scan_jpg",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-028-invoice.jpg",
+      "po_file": "purchase_orders/CASE-028-po.pdf"
+    },
+    {
+      "case_id": "CASE-029",
+      "category": "IT Software & Technology Services",
+      "scenario": "QUANTITY_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "QUANTITY_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0029",
+        "invoice_date": "2026-05-29",
+        "po_number": "PO-26-0029",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 3,
+            "unit_price": 21000.0,
+            "amount": 63000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 13500.0,
+            "amount": 40500.0
+          }
+        ],
+        "subtotal": 103500.0,
+        "tax_rate": 0.18,
+        "cgst": 9315.0,
+        "sgst": 9315.0,
+        "igst": 0.0,
+        "tax": 18630.0,
+        "total": 122130.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0029",
+        "po_date": "2026-05-06",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 21000.0,
+            "amount": 42000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 13500.0,
+            "amount": 40500.0
+          }
+        ],
+        "subtotal": 82500.0,
+        "tax_rate": 0.18,
+        "cgst": 7425.0,
+        "sgst": 7425.0,
+        "igst": 0.0,
+        "tax": 14850.0,
+        "total": 97350.0
+      },
+      "invoice_format": "jpg",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-029-invoice.jpg",
+      "po_file": "purchase_orders/CASE-029-po.pdf"
+    },
+    {
+      "case_id": "CASE-030",
+      "category": "IT Software & Technology Services",
+      "scenario": "TAX_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "TAX_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0030",
+        "invoice_date": "2026-05-31",
+        "po_number": "PO-26-0030",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 19800.0,
+            "amount": 99000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 2,
+            "unit_price": 8500.0,
+            "amount": 17000.0
+          }
+        ],
+        "subtotal": 131000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 24080.0,
+        "tax": 24080.0,
+        "total": 155080.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0030",
+        "po_date": "2026-05-20",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 19800.0,
+            "amount": 99000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 2,
+            "unit_price": 8500.0,
+            "amount": 17000.0
+          }
+        ],
+        "subtotal": 131000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 23580.0,
+        "tax": 23580.0,
+        "total": 154580.0
+      },
+      "invoice_format": "png",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-030-invoice.png",
+      "po_file": "purchase_orders/CASE-030-po.pdf"
+    },
+    {
+      "case_id": "CASE-031",
+      "category": "IT Software & Technology Services",
+      "scenario": "TAX_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "TAX_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0031",
+        "invoice_date": "2026-06-02",
+        "po_number": "PO-26-0031",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 13500.0,
+            "amount": 40500.0
+          }
+        ],
+        "subtotal": 60300.0,
+        "tax_rate": 0.18,
+        "cgst": 5677.0,
+        "sgst": 5677.0,
+        "igst": 0.0,
+        "tax": 11354.0,
+        "total": 71654.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0031",
+        "po_date": "2026-05-12",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 13500.0,
+            "amount": 40500.0
+          }
+        ],
+        "subtotal": 60300.0,
+        "tax_rate": 0.18,
+        "cgst": 5427.0,
+        "sgst": 5427.0,
+        "igst": 0.0,
+        "tax": 10854.0,
+        "total": 71154.0
+      },
+      "invoice_format": "jpg",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-031-invoice.jpg",
+      "po_file": "purchase_orders/CASE-031-po.png"
+    },
+    {
+      "case_id": "CASE-032",
+      "category": "IT Software & Technology Services",
+      "scenario": "TAX_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "TAX_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0032",
+        "invoice_date": "2026-06-04",
+        "po_number": "PO-26-0032",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 26250.0,
+            "amount": 26250.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 15750.0,
+            "amount": 47250.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 24200.0,
+            "amount": 72600.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          }
+        ],
+        "subtotal": 180100.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 32918.0,
+        "tax": 32918.0,
+        "total": 213018.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0032",
+        "po_date": "2026-05-06",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 26250.0,
+            "amount": 26250.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 15750.0,
+            "amount": 47250.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 24200.0,
+            "amount": 72600.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          }
+        ],
+        "subtotal": 180100.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 32418.0,
+        "tax": 32418.0,
+        "total": 212518.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-032-invoice.pdf",
+      "po_file": "purchase_orders/CASE-032-po.png"
+    },
+    {
+      "case_id": "CASE-033",
+      "category": "IT Software & Technology Services",
+      "scenario": "TAX_VARIANCE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "TAX_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0033",
+        "invoice_date": "2026-06-06",
+        "po_number": "PO-26-0033",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12600.0,
+            "amount": 12600.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          }
+        ],
+        "subtotal": 34600.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 6728.0,
+        "tax": 6728.0,
+        "total": 41328.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0033",
+        "po_date": "2026-05-30",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12600.0,
+            "amount": 12600.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          }
+        ],
+        "subtotal": 34600.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 6228.0,
+        "tax": 6228.0,
+        "total": 40828.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "jpg",
+      "invoice_file": "invoices/CASE-033-invoice.pdf",
+      "po_file": "purchase_orders/CASE-033-po.jpg"
+    },
+    {
+      "case_id": "CASE-034",
+      "category": "IT Software & Technology Services",
+      "scenario": "TOTAL_CALCULATION_ERROR",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "INVOICE_CALCULATION_ERROR",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0034",
+        "invoice_date": "2026-06-08",
+        "po_number": "PO-26-0034",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 25000.0,
+            "amount": 25000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 12100.0,
+            "amount": 36300.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 12000.0,
+            "amount": 36000.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 16200.0,
+            "amount": 48600.0
+          }
+        ],
+        "subtotal": 145900.0,
+        "tax_rate": 0.18,
+        "cgst": 13131.0,
+        "sgst": 13131.0,
+        "igst": 0.0,
+        "tax": 26262.0,
+        "total": 172912.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0034",
+        "po_date": "2026-05-12",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 25000.0,
+            "amount": 25000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 12100.0,
+            "amount": 36300.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 12000.0,
+            "amount": 36000.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 16200.0,
+            "amount": 48600.0
+          }
+        ],
+        "subtotal": 145900.0,
+        "tax_rate": 0.18,
+        "cgst": 13131.0,
+        "sgst": 13131.0,
+        "igst": 0.0,
+        "tax": 26262.0,
+        "total": 172162.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-034-invoice.pdf",
+      "po_file": "purchase_orders/CASE-034-po.pdf"
+    },
+    {
+      "case_id": "CASE-035",
+      "category": "IT Software & Technology Services",
+      "scenario": "TOTAL_CALCULATION_ERROR",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "INVOICE_CALCULATION_ERROR",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0035",
+        "invoice_date": "2026-06-10",
+        "po_number": "PO-26-0035",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 18375.0,
+            "amount": 55125.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 22500.0,
+            "amount": 225000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 14400.0,
+            "amount": 72000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 13200.0,
+            "amount": 39600.0
+          }
+        ],
+        "subtotal": 391725.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 70510.5,
+        "tax": 70510.5,
+        "total": 462985.5
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0035",
+        "po_date": "2026-05-19",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 18375.0,
+            "amount": 55125.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 22500.0,
+            "amount": 225000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 14400.0,
+            "amount": 72000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 13200.0,
+            "amount": 39600.0
+          }
+        ],
+        "subtotal": 391725.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 70510.5,
+        "tax": 70510.5,
+        "total": 462235.5
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-035-invoice.pdf",
+      "po_file": "purchase_orders/CASE-035-po.pdf"
+    },
+    {
+      "case_id": "CASE-036",
+      "category": "IT Software & Technology Services",
+      "scenario": "TOTAL_CALCULATION_ERROR",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "INVOICE_CALCULATION_ERROR",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0036",
+        "invoice_date": "2026-06-12",
+        "po_number": "PO-26-0036",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 11550.0,
+            "amount": 11550.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 17500.0,
+            "amount": 52500.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 23100.0,
+            "amount": 231000.0
+          }
+        ],
+        "subtotal": 295050.0,
+        "tax_rate": 0.18,
+        "cgst": 26554.5,
+        "sgst": 26554.5,
+        "igst": 0.0,
+        "tax": 53109.0,
+        "total": 348909.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0036",
+        "po_date": "2026-06-03",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 11550.0,
+            "amount": 11550.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 3,
+            "unit_price": 17500.0,
+            "amount": 52500.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 23100.0,
+            "amount": 231000.0
+          }
+        ],
+        "subtotal": 295050.0,
+        "tax_rate": 0.18,
+        "cgst": 26554.5,
+        "sgst": 26554.5,
+        "igst": 0.0,
+        "tax": 53109.0,
+        "total": 348159.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-036-invoice.pdf",
+      "po_file": "purchase_orders/CASE-036-po.png"
+    },
+    {
+      "case_id": "CASE-037",
+      "category": "IT Software & Technology Services",
+      "scenario": "UNMATCHED_LINE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "UNMATCHED_INVOICE_LINE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0037",
+        "invoice_date": "2026-06-14",
+        "po_number": "PO-26-0037",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 24200.0,
+            "amount": 24200.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 25000.0,
+            "amount": 250000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 17500.0,
+            "amount": 35000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 14400.0,
+            "amount": 72000.0
+          },
+          {
+            "description": "Additional onsite support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          }
+        ],
+        "subtotal": 393200.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 70776.0,
+        "tax": 70776.0,
+        "total": 463976.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0037",
+        "po_date": "2026-06-07",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 24200.0,
+            "amount": 24200.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 25000.0,
+            "amount": 250000.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 17500.0,
+            "amount": 35000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 14400.0,
+            "amount": 72000.0
+          }
+        ],
+        "subtotal": 381200.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 68616.0,
+        "tax": 68616.0,
+        "total": 449816.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-037-invoice.pdf",
+      "po_file": "purchase_orders/CASE-037-po.pdf"
+    },
+    {
+      "case_id": "CASE-038",
+      "category": "IT Software & Technology Services",
+      "scenario": "UNMATCHED_LINE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "UNMATCHED_INVOICE_LINE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0038",
+        "invoice_date": "2026-06-16",
+        "po_number": "PO-26-0038",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 13200.0,
+            "amount": 13200.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 20000.0,
+            "amount": 20000.0
+          },
+          {
+            "description": "Additional onsite support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          }
+        ],
+        "subtotal": 45200.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 8136.0,
+        "tax": 8136.0,
+        "total": 53336.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0038",
+        "po_date": "2026-06-04",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 13200.0,
+            "amount": 13200.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 20000.0,
+            "amount": 20000.0
+          }
+        ],
+        "subtotal": 33200.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 5976.0,
+        "tax": 5976.0,
+        "total": 39176.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-038-invoice.pdf",
+      "po_file": "purchase_orders/CASE-038-po.png"
+    },
+    {
+      "case_id": "CASE-039",
+      "category": "IT Software & Technology Services",
+      "scenario": "UNMATCHED_LINE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "UNMATCHED_INVOICE_LINE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0039",
+        "invoice_date": "2026-06-18",
+        "po_number": "PO-26-0039",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 10,
+            "unit_price": 16500.0,
+            "amount": 165000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 11550.0,
+            "amount": 115500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12600.0,
+            "amount": 12600.0
+          },
+          {
+            "description": "Additional onsite support",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 12000.0,
+            "amount": 12000.0
+          }
+        ],
+        "subtotal": 305100.0,
+        "tax_rate": 0.18,
+        "cgst": 27459.0,
+        "sgst": 27459.0,
+        "igst": 0.0,
+        "tax": 54918.0,
+        "total": 360018.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0039",
+        "po_date": "2026-05-23",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 10,
+            "unit_price": 16500.0,
+            "amount": 165000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 11550.0,
+            "amount": 115500.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 12600.0,
+            "amount": 12600.0
+          }
+        ],
+        "subtotal": 293100.0,
+        "tax_rate": 0.18,
+        "cgst": 26379.0,
+        "sgst": 26379.0,
+        "igst": 0.0,
+        "tax": 52758.0,
+        "total": 345858.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-039-invoice.pdf",
+      "po_file": "purchase_orders/CASE-039-po.pdf"
+    },
+    {
+      "case_id": "CASE-040",
+      "category": "IT Software & Technology Services",
+      "scenario": "PO_NUMBER_MISMATCH",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PO_NUMBER_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0040",
+        "invoice_date": "2026-06-20",
+        "po_number": "PO-26-7040",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 13200.0,
+            "amount": 39600.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 19800.0,
+            "amount": 39600.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 11550.0,
+            "amount": 57750.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 15750.0,
+            "amount": 15750.0
+          }
+        ],
+        "subtotal": 152700.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 27486.0,
+        "tax": 27486.0,
+        "total": 180186.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0040",
+        "po_date": "2026-05-29",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 13200.0,
+            "amount": 39600.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 2,
+            "unit_price": 19800.0,
+            "amount": 39600.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 11550.0,
+            "amount": 57750.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 15750.0,
+            "amount": 15750.0
+          }
+        ],
+        "subtotal": 152700.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 27486.0,
+        "tax": 27486.0,
+        "total": 180186.0
+      },
+      "invoice_format": "png",
+      "po_format": "scan_jpg",
+      "invoice_file": "invoices/CASE-040-invoice.png",
+      "po_file": "purchase_orders/CASE-040-po.jpg"
+    },
+    {
+      "case_id": "CASE-041",
+      "category": "IT Software & Technology Services",
+      "scenario": "PO_NUMBER_MISMATCH",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PO_NUMBER_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0041",
+        "invoice_date": "2026-06-22",
+        "po_number": "PO-26-7041",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 10800.0,
+            "amount": 32400.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 8925.0,
+            "amount": 26775.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 11000.0,
+            "amount": 55000.0
+          }
+        ],
+        "subtotal": 114175.0,
+        "tax_rate": 0.18,
+        "cgst": 10275.75,
+        "sgst": 10275.75,
+        "igst": 0.0,
+        "tax": 20551.5,
+        "total": 134726.5
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0041",
+        "po_date": "2026-06-17",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 10800.0,
+            "amount": 32400.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 8925.0,
+            "amount": 26775.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 11000.0,
+            "amount": 55000.0
+          }
+        ],
+        "subtotal": 114175.0,
+        "tax_rate": 0.18,
+        "cgst": 10275.75,
+        "sgst": 10275.75,
+        "igst": 0.0,
+        "tax": 20551.5,
+        "total": 134726.5
+      },
+      "invoice_format": "scan_jpg",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-041-invoice.jpg",
+      "po_file": "purchase_orders/CASE-041-po.pdf"
+    },
+    {
+      "case_id": "CASE-042",
+      "category": "IT Software & Technology Services",
+      "scenario": "VENDOR_MISMATCH",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "VENDOR_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0042",
+        "invoice_date": "2026-06-24",
+        "po_number": "PO-26-0042",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 18375.0,
+            "amount": 18375.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 9350.0,
+            "amount": 9350.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 17600.0,
+            "amount": 17600.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          }
+        ],
+        "subtotal": 82325.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 14818.5,
+        "tax": 14818.5,
+        "total": 97143.5
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0042",
+        "po_date": "2026-06-06",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 18375.0,
+            "amount": 18375.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 1,
+            "unit_price": 9350.0,
+            "amount": 9350.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 17600.0,
+            "amount": 17600.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 22000.0,
+            "amount": 22000.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 15000.0,
+            "amount": 15000.0
+          }
+        ],
+        "subtotal": 82325.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 14818.5,
+        "tax": 14818.5,
+        "total": 97143.5
+      },
+      "invoice_format": "scan_jpg",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-042-invoice.jpg",
+      "po_file": "purchase_orders/CASE-042-po.pdf"
+    },
+    {
+      "case_id": "CASE-043",
+      "category": "IT Software & Technology Services",
+      "scenario": "VENDOR_MISMATCH",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "VENDOR_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0043",
+        "invoice_date": "2026-06-26",
+        "po_number": "PO-26-0043",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 18375.0,
+            "amount": 18375.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 26250.0,
+            "amount": 262500.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 18000.0,
+            "amount": 180000.0
+          }
+        ],
+        "subtotal": 460875.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 82957.5,
+        "tax": 82957.5,
+        "total": 543832.5
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0043",
+        "po_date": "2026-06-01",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 18375.0,
+            "amount": 18375.0
+          },
+          {
+            "description": "Premium technical support",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 26250.0,
+            "amount": 262500.0
+          },
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 10,
+            "unit_price": 18000.0,
+            "amount": 180000.0
+          }
+        ],
+        "subtotal": 460875.0,
+        "tax_rate": 0.18,
+        "cgst": 41478.75,
+        "sgst": 41478.75,
+        "igst": 0.0,
+        "tax": 82957.5,
+        "total": 543832.5
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-043-invoice.pdf",
+      "po_file": "purchase_orders/CASE-043-po.pdf"
+    },
+    {
+      "case_id": "CASE-044",
+      "category": "IT Software & Technology Services",
+      "scenario": "DUPLICATE_INVOICE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "DUPLICATE_INVOICE"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DUP/26-27/0001",
+        "invoice_date": "2026-06-28",
+        "po_number": "PO-26-0044",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 16200.0,
+            "amount": 81000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 17600.0,
+            "amount": 17600.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 8925.0,
+            "amount": 89250.0
+          }
+        ],
+        "subtotal": 187850.0,
+        "tax_rate": 0.18,
+        "cgst": 16906.5,
+        "sgst": 16906.5,
+        "igst": 0.0,
+        "tax": 33813.0,
+        "total": 221663.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0044",
+        "po_date": "2026-06-15",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Implementation consulting",
+            "sac": "998313",
+            "quantity": 5,
+            "unit_price": 16200.0,
+            "amount": 81000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 17600.0,
+            "amount": 17600.0
+          },
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 10,
+            "unit_price": 8925.0,
+            "amount": 89250.0
+          }
+        ],
+        "subtotal": 187850.0,
+        "tax_rate": 0.18,
+        "cgst": 16906.5,
+        "sgst": 16906.5,
+        "igst": 0.0,
+        "tax": 33813.0,
+        "total": 221663.0
+      },
+      "invoice_format": "png",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-044-invoice.png",
+      "po_file": "purchase_orders/CASE-044-po.pdf"
+    },
+    {
+      "case_id": "CASE-045",
+      "category": "IT Software & Technology Services",
+      "scenario": "DUPLICATE_INVOICE",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "DUPLICATE_INVOICE"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "DUP/26-27/0001",
+        "invoice_date": "2026-06-30",
+        "po_number": "PO-26-0045",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 17600.0,
+            "amount": 88000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 13200.0,
+            "amount": 66000.0
+          }
+        ],
+        "subtotal": 154000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 27720.0,
+        "tax": 27720.0,
+        "total": 181720.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0045",
+        "po_date": "2026-06-04",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 5,
+            "unit_price": 17600.0,
+            "amount": 88000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 13200.0,
+            "amount": 66000.0
+          }
+        ],
+        "subtotal": 154000.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 27720.0,
+        "tax": 27720.0,
+        "total": 181720.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-045-invoice.pdf",
+      "po_file": "purchase_orders/CASE-045-po.png"
+    },
+    {
+      "case_id": "CASE-046",
+      "category": "IT Software & Technology Services",
+      "scenario": "CURRENCY_MISMATCH",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "CURRENCY_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "NIM/26-27/0046",
+        "invoice_date": "2026-07-02",
+        "po_number": "PO-26-0046",
+        "currency": "USD",
+        "lines": [
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16000.0,
+            "amount": 16000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 11000.0,
+            "amount": 33000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 23100.0,
+            "amount": 23100.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 15750.0,
+            "amount": 15750.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12000.0,
+            "amount": 60000.0
+          }
+        ],
+        "subtotal": 147850.0,
+        "tax_rate": 0.18,
+        "cgst": 13306.5,
+        "sgst": 13306.5,
+        "igst": 0.0,
+        "tax": 26613.0,
+        "total": 174463.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "NimbleStack Technologies Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCN4101A1Z5",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0046",
+        "po_date": "2026-06-06",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16000.0,
+            "amount": 16000.0
+          },
+          {
+            "description": "Managed database service",
+            "sac": "998315",
+            "quantity": 3,
+            "unit_price": 11000.0,
+            "amount": 33000.0
+          },
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 23100.0,
+            "amount": 23100.0
+          },
+          {
+            "description": "Data migration services",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 15750.0,
+            "amount": 15750.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 5,
+            "unit_price": 12000.0,
+            "amount": 60000.0
+          }
+        ],
+        "subtotal": 147850.0,
+        "tax_rate": 0.18,
+        "cgst": 13306.5,
+        "sgst": 13306.5,
+        "igst": 0.0,
+        "tax": 26613.0,
+        "total": 174463.0
+      },
+      "invoice_format": "scan_jpg",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-046-invoice.jpg",
+      "po_file": "purchase_orders/CASE-046-po.pdf"
+    },
+    {
+      "case_id": "CASE-047",
+      "category": "IT Software & Technology Services",
+      "scenario": "SCAN_CHALLENGE",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "invoice_number": "CLO/26-27/0047",
+        "invoice_date": "2026-07-04",
+        "po_number": "PO-26-0047",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 10,
+            "unit_price": 14400.0,
+            "amount": 144000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 20000.0,
+            "amount": 40000.0
+          }
+        ],
+        "subtotal": 203800.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 36684.0,
+        "tax": 36684.0,
+        "total": 240484.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "CloudHarbor Systems Pvt Ltd",
+          "state": "Maharashtra",
+          "state_code": "27",
+          "gstin": "27AACCC5202B1Z4",
+          "city": "Pune"
+        },
+        "po_number": "PO-26-0047",
+        "po_date": "2026-06-22",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cybersecurity monitoring service",
+            "sac": "998313",
+            "quantity": 1,
+            "unit_price": 19800.0,
+            "amount": 19800.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 10,
+            "unit_price": 14400.0,
+            "amount": 144000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 20000.0,
+            "amount": 40000.0
+          }
+        ],
+        "subtotal": 203800.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 36684.0,
+        "tax": 36684.0,
+        "total": 240484.0
+      },
+      "invoice_format": "scan_jpg",
+      "po_format": "jpg",
+      "invoice_file": "invoices/CASE-047-invoice.jpg",
+      "po_file": "purchase_orders/CASE-047-po.jpg"
+    },
+    {
+      "case_id": "CASE-048",
+      "category": "IT Software & Technology Services",
+      "scenario": "IMAGE_CHALLENGE",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "invoice_number": "SEC/26-27/0048",
+        "invoice_date": "2026-07-06",
+        "po_number": "PO-26-0048",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 15000.0,
+            "amount": 45000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 21000.0,
+            "amount": 42000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16000.0,
+            "amount": 16000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 13200.0,
+            "amount": 26400.0
+          }
+        ],
+        "subtotal": 129400.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 23292.0,
+        "tax": 23292.0,
+        "total": 152692.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "SecureOrbit Infotech Pvt Ltd",
+          "state": "Telangana",
+          "state_code": "36",
+          "gstin": "36AACCS6303C1Z3",
+          "city": "Hyderabad"
+        },
+        "po_number": "PO-26-0048",
+        "po_date": "2026-06-14",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 3,
+            "unit_price": 15000.0,
+            "amount": 45000.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 2,
+            "unit_price": 21000.0,
+            "amount": 42000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16000.0,
+            "amount": 16000.0
+          },
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 2,
+            "unit_price": 13200.0,
+            "amount": 26400.0
+          }
+        ],
+        "subtotal": 129400.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 23292.0,
+        "tax": 23292.0,
+        "total": 152692.0
+      },
+      "invoice_format": "png",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-048-invoice.png",
+      "po_file": "purchase_orders/CASE-048-po.png"
+    },
+    {
+      "case_id": "CASE-049",
+      "category": "IT Software & Technology Services",
+      "scenario": "MULTIPAGE_CHALLENGE",
+      "expected_decision": "MATCH",
+      "expected_exceptions": [],
+      "invoice": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "invoice_number": "DAT/26-27/0049",
+        "invoice_date": "2026-07-08",
+        "po_number": "PO-26-0049",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 7650.0,
+            "amount": 38250.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 16500.0,
+            "amount": 33000.0
+          }
+        ],
+        "subtotal": 71250.0,
+        "tax_rate": 0.18,
+        "cgst": 6412.5,
+        "sgst": 6412.5,
+        "igst": 0.0,
+        "tax": 12825.0,
+        "total": 84075.0
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "DataSprout Solutions Pvt Ltd",
+          "state": "Karnataka",
+          "state_code": "29",
+          "gstin": "29AACCD7404D1Z2",
+          "city": "Bengaluru"
+        },
+        "po_number": "PO-26-0049",
+        "po_date": "2026-07-01",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Cloud platform subscription - monthly",
+            "sac": "998315",
+            "quantity": 5,
+            "unit_price": 7650.0,
+            "amount": 38250.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 2,
+            "unit_price": 16500.0,
+            "amount": 33000.0
+          }
+        ],
+        "subtotal": 71250.0,
+        "tax_rate": 0.18,
+        "cgst": 6412.5,
+        "sgst": 6412.5,
+        "igst": 0.0,
+        "tax": 12825.0,
+        "total": 84075.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "png",
+      "invoice_file": "invoices/CASE-049-invoice.pdf",
+      "po_file": "purchase_orders/CASE-049-po.png"
+    },
+    {
+      "case_id": "CASE-050",
+      "category": "IT Software & Technology Services",
+      "scenario": "MULTIPLE_EXCEPTIONS",
+      "expected_decision": "EXCEPTION",
+      "expected_exceptions": [
+        "PRICE_VARIANCE",
+        "QUANTITY_VARIANCE",
+        "LINE_AMOUNT_VARIANCE",
+        "TAX_VARIANCE",
+        "TOTAL_MISMATCH"
+      ],
+      "invoice": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "invoice_number": "VER/26-27/0050",
+        "invoice_date": "2026-07-10",
+        "po_number": "PO-26-0050",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 3,
+            "unit_price": 14784.0,
+            "amount": 44352.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 16500.0,
+            "amount": 16500.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 3,
+            "unit_price": 22000.0,
+            "amount": 66000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16800.0,
+            "amount": 16800.0
+          }
+        ],
+        "subtotal": 143652.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 26857.36,
+        "tax": 26857.36,
+        "total": 170509.36
+      },
+      "purchase_order": {
+        "vendor": {
+          "name": "VertexWave Software Services Pvt Ltd",
+          "state": "Tamil Nadu",
+          "state_code": "33",
+          "gstin": "33AACCV8505E1Z1",
+          "city": "Chennai"
+        },
+        "po_number": "PO-26-0050",
+        "po_date": "2026-06-27",
+        "currency": "INR",
+        "lines": [
+          {
+            "description": "Enterprise software licence - annual",
+            "sac": "997331",
+            "quantity": 1,
+            "unit_price": 13200.0,
+            "amount": 13200.0
+          },
+          {
+            "description": "User training workshop",
+            "sac": "999293",
+            "quantity": 1,
+            "unit_price": 16500.0,
+            "amount": 16500.0
+          },
+          {
+            "description": "API integration services",
+            "sac": "998314",
+            "quantity": 3,
+            "unit_price": 22000.0,
+            "amount": 66000.0
+          },
+          {
+            "description": "Application maintenance support",
+            "sac": "998314",
+            "quantity": 1,
+            "unit_price": 16800.0,
+            "amount": 16800.0
+          }
+        ],
+        "subtotal": 112500.0,
+        "tax_rate": 0.18,
+        "cgst": 0.0,
+        "sgst": 0.0,
+        "igst": 20250.0,
+        "tax": 20250.0,
+        "total": 132750.0
+      },
+      "invoice_format": "pdf",
+      "po_format": "pdf",
+      "invoice_file": "invoices/CASE-050-invoice.pdf",
+      "po_file": "purchase_orders/CASE-050-po.pdf"
+    }
+  ]
+}
